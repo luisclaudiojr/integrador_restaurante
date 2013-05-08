@@ -1,0 +1,13 @@
+Pendencias
+
+CONTAS.PHP
+1 - ALTERAR DADOS DA CONTA
+2 - ENCERRAR CONTA - informar o tipo de pagamento - CHEQUE - CARTÃO - DINHEIRO  - DEVE-SE VERIFICAR SE TODOS OS PEDIDOS FORAM ENTREGUES - ok
+3 - EXCLUIR CONTA --- SE NÃO HOUVER PEDIDOS
+
+
+FATURAMENTO.PHP
+
+aqui deve-se fazer um filtro por periodo,mostrando o numero de contas que passaram pela pizzaria, e o valor arrecadado por cada uma - 
+no final deve-se mostrar o dinheiro que foi juntado
+
