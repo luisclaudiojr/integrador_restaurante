@@ -50,7 +50,7 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 				<select name='mesa' id='mesa'>
 				<option value="">--MESA--</option>
 				<?php
-					   $sql = "SELECT * FROM mesa  ";
+					   $sql = "SELECT * FROM CONTA INNER JOIN MESA on (CONTA.MESA_ID_MESA=mesa.id_mesa) where exists (SELECT * FROM MESA)  GROUP BY ID_CONTA";
 					   $res = mysql_query($sql) or die ("Erro: ".mysql_error());
 					   
 						$registro="";
