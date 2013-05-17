@@ -3,7 +3,7 @@ include "../conexao.php";
 include "../funcoes/funcoesbd/funcoesbd.php";
 
 $id_conta		=	$_GET['id_conta'];
-$cont			=	0;
+
 $linha_afetada	=	mysql_num_rows(mysql_query("SELECT status_pedido FROM PEDIDO WHERE CONTA_id_conta=$id_conta and status_pedido='P'"));
 //verifica se há pedidos pendentes, se houver ele não deixa você encerrar a conta!
 
@@ -22,8 +22,8 @@ if($linha_afetada>0){
 			$item				=	$dados['nome_item'];
 			$valor_total		=	$qtd*$vlr_unitario;
 			$valor_final		=	$valor_total+$valor_final;
-			$array_itens[$cont] =	"$item : -- Valor-Unitario:$vlr_unitario -- Quantidade: $qtd -- Valor total: R$ $valor_total<br>"; 
-			$cont++;
+			$array_itens[] =	"$item : -- Valor-Unitario:$vlr_unitario -- Quantidade: $qtd -- Valor total: R$ $valor_total<br>"; 
+			
 		}
 
 		$total_array 		=	count($array_itens);

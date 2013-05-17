@@ -10,7 +10,7 @@
 <h1>Contas em Aberto</h1>
 	<table>
 		<tr>
-			<th>Nro</th>
+			<th>Nro Conta</th>
 			<th>Nro Mesa</th>
 			<th>Entrada</th>
 			<th>Funcionario</th>
@@ -21,12 +21,10 @@
 			<th>Encerrar Conta</th>
 		</tr>
 <?php		
-$cont			=	0;
 //status A = Aberto  - F = Fechada
 
 	while($dados 	= 	 mysql_fetch_array($query))
 	{
-		$cont++;
 		$id_conta				=	$dados['id_conta'];
 		$data_entrada			=	$dados['data_entrada'];
 		$nro_mesa				=	$dados['nro_mesa'];
@@ -46,13 +44,12 @@ $cont			=	0;
 				$valor_total		=	$qtd*$vlr_unitario;
 				//vai somando os valores dos itens e suas quantidades!
 				$valor_final		=	$valor_total+$valor_final;
-				$cont++;
 			}
 
 		
 		echo "
 			<tr>
-				<td>$cont</td>
+				<td>$id_conta</td>
 				<td>$nro_mesa</td>
 				<td>$data_entrada</td>
 				<td>$nome_func</td>

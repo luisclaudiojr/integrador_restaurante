@@ -11,3 +11,19 @@ FATURAMENTO.PHP
 aqui deve-se fazer um filtro por periodo,mostrando o numero de contas que passaram pela pizzaria, e o valor arrecadado por cada uma - 
 no final deve-se mostrar o dinheiro que foi juntado
 
+
+
+TABELA CONTA
+
+POSSUI 
+
+ID_MESA,ID_CONTA,VALOR,STATUS
+
+
+TABELA MESA
+
+POSSUI
+
+ID_MESA, NRO_MESA
+
+PRECISO SABER QUAIS OS NROS DAS MESAS QUE NÃO ESTÃO COM STATUS='A' PORQUE SE TIVEREM COMO 'A' É QUE ESTA EM USO.
