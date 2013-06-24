@@ -1,0 +1,24 @@
+body {
+	background: black;
+	color:white;
+	margin:0;
+	padding:0;
+	font-family: ubuntu;
+}
+
+.fe_menu_index 	{ background: rgb(60, 60, 60);	color: white;}
+.fe_menu_index ul	{ background: ;list-style: none;margin: 0;padding: 0;}
+.fe_menu_index ul li	{ background: ;}
+.fe_menu_index ul li a	{ background: ;padding:10px;display: block;color: white; text-decoration: none; text-transform: capitalize;}
+.fe_menu_index ul li a:hover	{ background: rgb(40, 40, 40);}
+.fe_menu_index ul li a.fe_titulo	{ background: rgb(0, 122, 255);}
+.fe_menu_index ul li a.fe_titulo:hover	{ background: rgb(0, 94, 196);}
+.fe_menu_index ul li a i	{ display: block; margin-right:10px; width: 20px; height: 20px; float:left;}
+
+i.menu { background: url("/_assets/img/icons/menu.png") center no-repeat; }
+i.funcionarios { background: url("/_assets/img/icons/funcionarios.png") center no-repeat; }
+i.contas { background: url("/_assets/img/icons/contas.png") center no-repeat; }
+i.itens { background: url("/_assets/img/icons/itens.png") center no-repeat; }
+i.mesas { background: url("/_assets/img/icons/mesas.png") center no-repeat; }
+i.faturamento { background: url("/_assets/img/icons/faturamento.png") center no-repeat; }
+i.pendencias { background: url("/_assets/img/icons/pendencias.png") center no-repeat; }
