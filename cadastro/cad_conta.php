@@ -68,7 +68,7 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="reset" value="Limpar" class="button">
 				</p>
-				<a href="../index.php">Página Inicial</a>
+				<a href="javascript:window.history.go(-1)">Cancelar</a>
 </html>
 <?php
 if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
