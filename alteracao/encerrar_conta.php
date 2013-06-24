@@ -22,7 +22,7 @@ if($linha_afetada>0){
 			$item				=	$dados['nome_item'];
 			$valor_total		=	$qtd*$vlr_unitario;
 			$valor_final		=	$valor_total+$valor_final;
-			$array_itens[] =	"$item : -- Valor-Unitario:$vlr_unitario -- Quantidade: $qtd -- Valor total: R$ $valor_total<br>"; 
+			$array_itens[]	    =	"$item : -- Valor-Unitario:$vlr_unitario -- Quantidade: $qtd -- Valor total: R$ $valor_total<br>"; 
 			
 		}
 
