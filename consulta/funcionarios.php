@@ -1,4 +1,7 @@
 ﻿<html>
+	
+	<?php include "../includes/head.php"; ?>
+	
 	<table>
 		<tr>
 			<th>Nro</th>
@@ -30,6 +33,6 @@ while($dados 	= 	 mysql_fetch_array($query))
 }
 ?>								
 	<button ><a href="../cadastro/cad_func.php"> Incluir Funcionario</a></button>
-	<a href="../index.php">Página Inicial</a>	
+			<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
 	</table>
 </html>

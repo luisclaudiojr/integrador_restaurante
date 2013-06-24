@@ -24,5 +24,5 @@ $total_array 		=	count($valor_array);
 
 echo "VALOR TOTAL DAS CONTAS: R$ $valor_total<BR>";
 
-ECHO "<a href='faturamento.php'>Voltar</a>";
 ?>
+<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>

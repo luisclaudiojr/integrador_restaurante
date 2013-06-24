@@ -1,3 +1,9 @@
+<html>
+	
+	<?php include "../includes/head.php"; ?>
+
+<body>
+	
 <?php
 
 // Função para calcular horário
@@ -21,7 +27,7 @@ $linha_afetada	=	mysql_num_rows($query);
 
 if($linha_afetada=0){
 	echo "Não há pedidos pendentes!";
-	echo "<br><a href='../index.php'>Voltar</a>";
+	echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
 }else{
 echo"
 		<table>
@@ -64,6 +70,6 @@ echo"
 		
 		";
 	}//o certo é fazer aparecer em vermelho os que aparecerem mais de 30min
-		echo "<br><a href='../index.php'>Voltar</a>";
+		echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
 }
 ?>

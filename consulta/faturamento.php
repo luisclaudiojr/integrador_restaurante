@@ -1,4 +1,7 @@
 ﻿<html>
+	
+	<?php include "../includes/head.php"; ?>
+	
 	<body>
 		<form action="faturamento_calcular.php"  name="fat" method="POST">
 			       <fieldset class="label_side">
@@ -10,7 +13,7 @@
         
 					</fieldset>
 	    	   
-		<a href='../index.php'>Voltar</a>  
+		<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
 		</form>				
 		
 	

@@ -1,4 +1,8 @@
-﻿<?php
+﻿<html>
+	
+	<?php include "../includes/head.php"; ?>
+
+<?php
 	include "../conexao.php";
 	$query			=	 mysql_query("Select id_conta,data_entrada,mesa.nro_mesa,nome_funcionario from conta  INNER JOIN mesa ON(conta.MESA_id_mesa=mesa.id_mesa)INNER JOIN funcionario ON(conta.FUNCIONARIO_id_funcionario=funcionario.id_funcionario) where status_conta='A' order by mesa.nro_mesa");
 	$ver_conta		=	 mysql_num_rows($query);
@@ -6,7 +10,8 @@
 		echo "NÃO HÁ NENHUMA CONTA EM ABERTO";
 	}else{
 ?>
-<html>
+
+	
 <h1>Contas em Aberto</h1>
 	<table>
 		<tr>
@@ -20,7 +25,7 @@
 			<th>Excluir</th>
 			<th>Encerrar Conta</th>
 		</tr>
-<?php		
+		<?php		
 //status A = Aberto  - F = Fechada
 
 	while($dados 	= 	 mysql_fetch_array($query))
@@ -64,6 +69,6 @@
 }
 ?>								
 	<button ><a href="../cadastro/cad_conta.php"> Incluir Contas</a></button>
-	<a href="../index.php">Página Inicial</a>	
+			<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
 	</table>
 </html>

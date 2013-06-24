@@ -1,11 +1,14 @@
 ﻿<html>
+	
+	<?php include "../includes/head.php"; ?>
+	
 	<table>
 		<tr>
 			<th>Nro</th>
 			<th>Nro Mesa</th>
 			<th>Excluir</th>
 		</tr>
-<?php		
+		<?php		
 include "../conexao.php";
 $cont			=	0;
 $query			=	 mysql_query("Select * from mesa ");
@@ -24,6 +27,6 @@ while($dados 	= 	 mysql_fetch_array($query))
 }
 ?>								
 	<button ><a href="../cadastro/cad_mesa.php"> Incluir Mesa</a></button>
-	<a href="../index.php">Página Inicial</a>	
+			<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
 	</table>
 </html>
