@@ -16,7 +16,7 @@
 <body>	
 		<div id="conteudo" align="center">
 				<div id="login">				
-						<form name="login" method="post" action="index.php">
+						<form name="login" method="post" action="login.php">
 							<table border="0" valign="bottom">
 								<tr>
 								<td align="center" ><font size="2">Usu&aacute;rio</td>
