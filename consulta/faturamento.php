@@ -1,6 +1,6 @@
 ﻿<html>
 	
-	<?php include "../includes/head.php"; ?>
+	<?php /* <head> ============== */ include "/includes/head.php"; ?>
 	
 	<body>
 		<form action="faturamento_calcular.php"  name="fat" method="POST">

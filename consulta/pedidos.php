@@ -4,7 +4,7 @@ $nro_mesa	=	$_GET['mesa'];
 ?>
 <html>
 	
-	<?php include "../includes/head.php"; ?>
+	<?php /* <head> ============== */ include "/includes/head.php"; ?>
 	
 <h1>Pedidos da Mesa <?php echo $nro_mesa; ?> </h1>
 	<table>
