@@ -1,9 +1,17 @@
 <html>
 	
-	<?php /* <head> ============== */ include "/includes/head.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
 
 <body>
 	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_7" data-titulo="pendencias"><i class="pendencias"></i>Pedidos Pendentes</a></li>
+			<ul>
+		</div>
+
+	<div class="area_de_tabelas">
 <?php
 
 // Função para calcular horário
@@ -30,17 +38,21 @@ if($linha_afetada=0){
 	echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
 }else{
 echo"
-		<table>
+
+	<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+		<thead>
 		<tr>
-			<th>Nro Mesa</th>
-			<th>Nro conta</th>
-			<th>Data Pedido</th>
+			<th style='width: 36px'>Mesa</th>
+			<th style='width: 41px'>Conta</th>
+			<th style='width: 54px'>Data</th>
+			<th style='width: 27px '>Qtd</th>
 			<th>Item</th>
-			<th>Qtd </th>
 			<th>Descrição</th>
-			<th>Tempo de Espera</th>
+			<th style='width: 71px'>Espera</th>
 			
-		</tr>";
+		</tr>
+		</thead>
+		";
 
 	while($dados		=	mysql_fetch_array($query)){
 		$nro_mesa		=	$dados['nro_mesa'];
@@ -62,14 +74,14 @@ echo"
 				<td>$nro_mesa</td>
 				<td>$id_conta</td>
 				<td>$data_pedido</td>
-				<td>$nome_item</td>
 				<td>$qtd</td>
+				<td>$nome_item</td>
 				<td>$descricao</td>
 				<td>$tempo_espera Min</td>
 		</tr>
 		
 		";
 	}//o certo é fazer aparecer em vermelho os que aparecerem mais de 30min
-		echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
 }
 ?>
+	</div>

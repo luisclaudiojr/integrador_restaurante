@@ -1,15 +1,27 @@
 ﻿<html>
 	
-	<?php /* <head> ============== */ include "/includes/head.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
 	
-	<table>
+	<body>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_2" data-titulo="funcionarios"><i class="funcionarios"></i>Funcionarios</a></li>
+			<ul>
+		</div>
+	
+	
+	<div class="area_de_tabelas">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<thead>
 		<tr>
-			<th>Nro</th>
+			<th style="width: 20px;">Nº</th>
 			<th>Nome</th>
-			<th>Admissao</th>
-			<th>Alterar</th>
-			<th>Excluir</th>
+			<th style="width: 77px;">Admissao</th>
+			<th style="width: 51px;">Opções</th>
 		</tr>
+		</thead>
 <?php		
 include "../conexao.php";
 $cont			=	0;
@@ -25,14 +37,17 @@ while($dados 	= 	 mysql_fetch_array($query))
 	echo "
 		<tr>
 			<td>$cont</td>
-			<td>$nome</td>
+			<td style='text-transform:uppercase;'>$nome</td>
 			<td>$data_admissao</td>
-			<td><a href='../alteracao/alt_func.php?id=$id'>Alterar</a></td>
-			<td><a href='../exclusao/del_func.php?id=$id'>Excluir</a></td>
+			<td><a href='../alteracao/alt_func.php?id=$id'><i class='editar'></i></a>  <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
 		</tr>";
 }
 ?>								
-	<button ><a href="../cadastro/cad_func.php"> Incluir Funcionario</a></button>
-			<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
+	
 	</table>
+	</div>
+	
+	<button class="fundo_1" ><a href="/cadastro/cad_func.php"><i class='incluir'></i>Incluir Funcionario</a></button>
+	
+	</body>
 </html>

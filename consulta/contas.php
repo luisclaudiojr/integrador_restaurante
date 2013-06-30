@@ -1,6 +1,6 @@
 ﻿<html>
 	
-	<?php /* <head> ============== */ include "/includes/head.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
 
 <?php
 	include "../conexao.php";
@@ -12,19 +12,27 @@
 ?>
 
 	
-<h1>Contas em Aberto</h1>
-	<table>
+
+
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_3" data-titulo="contas" ><i class="contas"></i>Contas em Aberto</a></li>
+			<ul>
+		</div>
+
+	<div class="area_de_tabelas">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<thead>
 		<tr>
-			<th>Nro Conta</th>
-			<th>Nro Mesa</th>
-			<th>Entrada</th>
+			<th style="width: 45px;">Conta</th>
+			<th style="width: 45px;">Mesa</th>
+			<th style="width: 114px;">Entrada</th>
 			<th>Funcionario</th>
-			<th>Valor Total</th>
-			<th>Pedidos</th>
-			<th>Alterar</th>
-			<th>Excluir</th>
-			<th>Encerrar Conta</th>
+			<th style="width: 80px;">Valor Total</th>
+			<th style="width: 108px;">Opções</th>
 		</tr>
+		</thead>
 		<?php		
 //status A = Aberto  - F = Fechada
 
@@ -59,16 +67,18 @@
 				<td>$data_entrada</td>
 				<td>$nome_func</td>
 				<td>R$ $valor_final</td>
-				<td><a href='../consulta/pedidos.php?id_conta=$id_conta&mesa=$nro_mesa'>PEDIDOS</a></td>
-				<td><a href='../alteracao/alt_conta.php?id_conta=$id_conta'>Alterar</a></td>
-				<td><a href='../exclusao/del_conta.php?id_conta=$id_conta'>Excluir</a></td>
-				<td><a href='../alteracao/encerrar_conta.php?id_conta=$id_conta'>Encerrar Conta</a></td>
+				<td><a href='../consulta/pedidos.php?id_conta=$id_conta&mesa=$nro_mesa'><i class='ver'></i></a>
+				<a href='../alteracao/alt_conta.php?id_conta=$id_conta'><i class='editar'></i></a>
+				<a href='../exclusao/del_conta.php?id_conta=$id_conta'><i class='excluir'></i></a>
+				<a href='../alteracao/encerrar_conta.php?id_conta=$id_conta'><i class='fechar_conta'></i></a></td>
 			</tr>";
 			
 		}
 }
 ?>								
-	<button ><a href="../cadastro/cad_conta.php"> Incluir Contas</a></button>
-			<a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
+	
 	</table>
+	</div>
+	<button class="fundo_1" ><a href="/cadastro/cad_conta.php"><i class='incluir'></i>Incluir Contas</a></button>
+	
 </html>

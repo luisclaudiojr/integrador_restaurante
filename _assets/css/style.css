@@ -1,17 +1,19 @@
 body {
-	background: black;
+	background: rgb(199, 199, 199);
 	color:white;
 	margin:0;
 	padding:0;
 	font-family: ubuntu;
 }
 
-.fe_menu_index 	{ background: rgb(60, 60, 60);	color: white;}
+
+
+.fe_menu_index 	{ background: rgb(60, 60, 60);	color: white; }
 .fe_menu_index ul	{ background: ;list-style: none;margin: 0;padding: 0;}
 .fe_menu_index ul li	{ background: ;}
 .fe_menu_index ul li a	{ background: ;padding:10px;display: block;color: white; text-decoration: none; text-transform: capitalize;}
 .fe_menu_index ul li a:hover	{ background: rgb(40, 40, 40);}
-.fe_menu_index ul li a.fe_titulo	{ background: rgb(0, 122, 255);}
+.fe_menu_index ul li a.fe_titulo	{ background: rgb(0, 122, 255); text-transform: uppercase;}
 .fe_menu_index ul li a.fe_titulo:hover	{ background: rgb(0, 94, 196);}
 .fe_menu_index ul li a i	{ display: block; margin-right:10px; width: 20px; height: 20px; float:left;}
 
@@ -22,3 +24,50 @@ i.itens { background: url("/_assets/img/icons/itens.png") center no-repeat; }
 i.mesas { background: url("/_assets/img/icons/mesas.png") center no-repeat; }
 i.faturamento { background: url("/_assets/img/icons/faturamento.png") center no-repeat; }
 i.pendencias { background: url("/_assets/img/icons/pendencias.png") center no-repeat; }
+i.editar { background: url("/_assets/img/icons/editar.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
+i.ver { background: url("/_assets/img/icons/ver.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
+i.fechar_conta { background: url("/_assets/img/icons/fechar_conta.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
+i.excluir { background: url("/_assets/img/icons/excluir.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
+i.incluir { background: url("/_assets/img/icons/incluir.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
+i.consultar { background: url("/_assets/img/icons/consultar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
+
+
+
+
+.fundo_1 { background: #52905d ;}
+.fundo_1:hover { background: #52905d ;}
+.fundo_2 { background: rgb(92, 67, 122) ;}
+.fundo_2:hover { background:rgb(80, 57, 107) !important;}
+.fundo_3 {background: rgb(133, 68, 9); }
+.fundo_4 {background: rgb(96, 128, 163);}
+.fundo_5 { background: rgb(92, 67, 122) ;}
+.fundo_6 {background: rgb(133, 68, 9); }
+.fundo_7 {background: rgb(96, 128, 163);}
+.fundo_8 {background: rgb(0, 150, 235);}
+
+
+button {border: 0;padding: 7px;text-transform: uppercase;font-size: 12px;border-radius: 3px;color: white;margin: 10px;	}
+button a { text-decoration: none; color: inherit;}
+
+.area_de_tabelas {background: rgb(220, 220, 220);color: black ; padding:10px; padding-bottom:20px; }
+
+table {width: 100%;  font-size:14px; color: black;}
+table thead tr th {	padding:10px;}
+table thead tr th, table tr td {	border-right:1px solid rgb(204, 204, 204);padding: 5px;	}
+table tbody tr td {	border-top:1px solid rgb(190, 190, 190);	}
+
+
+tbody tr:nth-child(even) {  background-color: rgb(226, 232, 233);}
+tbody tr:nth-child(odd):hover,
+tbody tr:nth-child(even):hover {  background-color: rgb(100, 100, 100); color: white;}
+
+
+tbody tr:nth-child(odd) {  background-color: rgb(206, 220, 230);}
+
+
+
+td a {display: inline-block;}
+
+
+form#faturamento label	{ width: 125px;display: inline-block;text-align: right;margin-right: 5px;height: 24px;}
+form#faturamento input[type=date]	{ display: inline-block; clear:both; width: 138px;}
