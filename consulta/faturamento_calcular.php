@@ -6,7 +6,8 @@ $data1			=	$_POST['data'];
 $data2			=	$_POST['data2'];
 $sql			=   "Select data_entrada,id_conta,vlr_total from conta where data_entrada>='$data1' and data_entrada<='$data2' and status_conta='F' ORDER BY DATA_ENTRADA";
 $query			=	mysql_query($sql);
-
+$linhas			=	mysql_num_rows($query);
+if($linhas){
 while($dados	= mysql_fetch_array($query, MYSQL_ASSOC)){
 	$data_entrada	=	$dados["data_entrada"];
 	$valor			=	$dados["vlr_total"];
@@ -23,6 +24,8 @@ $total_array 		=	count($valor_array);
 		}
 
 echo "VALOR TOTAL DAS CONTAS: R$ $valor_total<BR>";
-
+}else{
+Echo "Não existe fechamento para esse periodo";
+}
 ?>
 <a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>
