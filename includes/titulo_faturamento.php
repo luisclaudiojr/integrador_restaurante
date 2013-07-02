@@ -1,0 +1,1 @@
+<li><a href="/consulta/faturamento.php" class="desabilitar_link fundo_5" data-titulo="faturamento"><i class="faturamento"></i>Faturamento</a></li>
