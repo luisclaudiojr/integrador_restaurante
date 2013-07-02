@@ -29,13 +29,6 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 	<form name="cadastro_contas" class="form" method="POST" action="cad_conta.php">
 	<div class="area_de_tabelas">
 			<label for="funcionario" id="labelcentro">Funcionário:</label>
-				<?php
-				if ((isset($_POST['Enviar'])) && ($_POST['Enviar'] == 'Enviar')){
-						if($funcionario==""){
-							echo "<span id='error'><img src='imagens/erroricon.gif' height='12'> Informe o Funcionario</span>";
-							$cont_erro++; 
-							}
-					}?>
 				<select name='funcionario' id='funcionario'>
 				<option value="">--Funcionario--</option>
 				<?php
@@ -53,17 +46,10 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 			   </select>
 			<br />
 			<label for="mesa" id="labelcentro">Mesa:</label>
-				<?php
-				if ((isset($_POST['Enviar'])) && ($_POST['Enviar'] == 'Enviar')){
-						if($mesa==""){
-							echo "<span id='error'><img src='imagens/erroricon.gif' height='12'> Informe a Mesa</span>";
-							$cont_erro++; 
-							}
-					}?>
 				<select name='mesa' id='mesa'>
 				<option value="">--MESA--</option>
 				<?php
-					   $sql = "SELECT * FROM CONTA INNER JOIN MESA on (CONTA.MESA_ID_MESA=mesa.id_mesa) where exists (SELECT * FROM MESA)  GROUP BY ID_CONTA";
+					   $sql = "SELECT * FROM  MESA ";
 					   $res = mysql_query($sql) or die ("Erro: ".mysql_error());
 					   
 						$registro="";
