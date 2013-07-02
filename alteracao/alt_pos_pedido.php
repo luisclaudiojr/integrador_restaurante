@@ -19,7 +19,7 @@ $condicao = "where id_pedido = $id";
 $sucesso  = alteracaobd("pedido", $campos, $condicao);
 if($sucesso){
 	if($cont!=0){
-		header("location: consulta/pedidos_pendentes.php?alterado=true");
+		header("location: ../consulta/pedidos_pendentes.php?alterado=true");
 	}else{
 		header("location: ../consulta/pedidos.php?id_conta=$conta&mesa=$mesa&alterado=true ");
 	}

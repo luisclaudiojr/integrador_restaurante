@@ -33,9 +33,9 @@ $query=mysql_query("SELECT nro_mesa,id_conta,data_pedido,descricao_pedido,nome_i
 $linha_afetada	=	mysql_num_rows($query);
 //verifica se hÃ¡ pedidos pendentes, se houver ele nÃ£o deixa vocÃª encerrar a conta!
 
-if($linha_afetada=0){
-	echo "Não há pedidos pendentes!";
-	echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
+if($linha_afetada==0){
+	echo'<div class="msg_sucesso">Não há Nenhum Pedido Pendente!</div>';
+				
 }else{
 echo"
 
@@ -84,5 +84,7 @@ echo"
 		";
 	}//o certo Ã© fazer aparecer em vermelho os que aparecerem mais de 30min
 }
-?>
+   include "../includes/verifica_get.php";
+	?>
 	</div>
+	
