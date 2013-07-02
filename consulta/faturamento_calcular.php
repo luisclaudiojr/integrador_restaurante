@@ -73,7 +73,7 @@ $total_array 		=	count($valor_array);
 		
 <?php
 }else{
-	header("location: ../consulta/faturamento.php?excluido=false ");
+	header("location: ../consulta/faturamento.php?faturamento=false ");
 }
 ?>
 
