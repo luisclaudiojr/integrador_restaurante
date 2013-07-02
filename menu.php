@@ -1,5 +1,7 @@
 <html>
-	<?php include "/includes/head.php"; ?>
+	<?php 
+	include "/includes/valida_sessao.php";
+	include "/includes/head.php"; ?>
 	<body style="background: black;">
 	
 	
@@ -14,6 +16,7 @@
 				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_mesas.php"; ?>
 				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_faturamento.php"; ?>
 				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_pendencias.php"; ?>
+				
 			<ul>
 		</div>
 		

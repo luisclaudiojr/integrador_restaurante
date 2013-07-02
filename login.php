@@ -51,8 +51,8 @@
 								
 							</style>
 							
-							<input style="margin-top:30px" class="input" type="text" name="txtusuario" required size="12" maxlength="30" style="border:1px solid #828282;">
-							<input class="input" type="password" name="txtsenha" required size="12" maxlength="30">
+							<input style="margin-top:30px" class="input" type="text" placeholder='Usuario' name="txtusuario" required size="12" maxlength="30" style="border:1px solid #828282;">
+							<input class="input" type="password" name="txtsenha" placeholder='Senha' required size="12" maxlength="30">
 
 							<input class="input entrar" name='Entrar' type="submit" id="submit" value='Entrar'>
 
@@ -63,17 +63,20 @@
 										
 									
 											$senha1=md5($senhalogin);
-											$res=mysql_query("SELECT * FROM usuario  WHERE usuario ='$usuariologin'");
+											$res=mysql_query("SELECT * from funcionario  WHERE usuario ='$usuariologin'");
 
 											$dados=mysql_fetch_array($res);
 												$bd_usr = $dados['usuario'];
 												$bd_senha = $dados['senha'];
-												
+												$bd_permissao = $dados['permissao'];
 										    if(($bd_usr==$usuariologin)and($bd_senha==$senha1)){
 												session_start();
 												$_SESSION['usuario'] = $bd_usr;
 												$_SESSION['senha'] = $bd_senha;
 												$_SESSION['id_sessao']=session_id();				
+												$_SESSION['permissao']=$bd_permissao;
+												$_SESSION['id_funcionario']=$id_funcionario;
+												$_SESSION['nome_funcionario']=$nome_funcionario;
 												
 												header ("Location: menu.php");
 											}else{

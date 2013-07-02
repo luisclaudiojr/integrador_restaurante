@@ -17,7 +17,9 @@
 		<thead>
 		<tr>
 			<th style="width: 20px;">Nº</th>
-			<th>Nome</th>
+			<th style="width: 20px;">Nome</th>
+			<th >Usuario</th>
+			
 			<th style="width: 77px;">Admissao</th>
 			<th style="width: 51px;">Opções</th>
 		</tr>
@@ -33,13 +35,22 @@ while($dados 	= 	 mysql_fetch_array($query))
 	$nome					=	$dados['nome_funcionario'];
 	$data_admissao			=	$dados['data_admissao'];
 	$id						=	$dados['id_funcionario'];
+	$usuario				=	$dados['usuario'];
+	$permissao				=	$dados['permissao'];
+	if($permissao==0){
+		$permissao = 'Gerente';
+	}else{
+		$permissao = 'Operacional';
+	}
 	$data_admissao			=	date("d/m/Y", strtotime($data_admissao));
 	echo "
 		<tr>
 			<td>$cont</td>
 			<td style='text-transform:uppercase;'>$nome</td>
+			<td style='text-transform:uppercase;'>$usuario</td>
+			
 			<td>$data_admissao</td>
-			<td><a href='../cadastro/cad_func.php?id=$id'><i class='editar'></i></a>  <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
+			<td><a href='../cadastro/cad_func.php?id=$id'><i class='editar'></i></a><a href='../alteracao/alt_senha.php?id=$id'><i class='editar_senha'></i></a> <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
 		</tr>";
 }
 ?>								
@@ -55,7 +66,11 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</div>
 	
-	<?php $href = "/cadastro/cad_func.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
-	
+	<?php 
+		if($permissao_sessao==0){
+			$href = "/cadastro/cad_func.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; 
+		}	
+			?>
+		
 	</body>
 </html>
