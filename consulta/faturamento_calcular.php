@@ -21,9 +21,9 @@ while($dados	= mysql_fetch_array($query, MYSQL_ASSOC)){
 	}else if($tipo_pagamento == 2){
 	$tipo_pagamento = 'Dinheiro';
 	}else if($tipo_pagamento ==3){
-	$tipo_pagamento = 'Cart„o de CrÈdito';
+	$tipo_pagamento = 'Cart√£o de Cr√©dito';
 	}else if($tipo_pagamento ==4){
-	$tipo_pagamento = 'Cart„o de DÈbito';
+	$tipo_pagamento = 'Cart√£o de D√©bito';
 	}
 	
 	$data_entrada	=	date("d/m/Y h:i", strtotime($data_entrada));

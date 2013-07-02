@@ -1,6 +1,6 @@
 <html>
 	<?php 
-	include "/includes/valida_sessao.php";
+	include_once "/includes/valida_sessao.php";
 	include "/includes/head.php"; ?>
 	<body style="background: black;">
 	

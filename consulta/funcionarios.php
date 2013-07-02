@@ -19,9 +19,14 @@
 			<th style="width: 20px;">Nº</th>
 			<th style="width: 20px;">Nome</th>
 			<th >Usuario</th>
-			
+			<th >Permissão</th>
 			<th style="width: 77px;">Admissao</th>
+			
+			<?php
+				if($permissao_sessao==0){
+			?>
 			<th style="width: 51px;">Opções</th>
+			<?php }?>
 		</tr>
 		</thead>
 <?php		
@@ -38,20 +43,25 @@ while($dados 	= 	 mysql_fetch_array($query))
 	$usuario				=	$dados['usuario'];
 	$permissao				=	$dados['permissao'];
 	if($permissao==0){
-		$permissao = 'Gerente';
+		$permissao = 'GERENTE';
 	}else{
-		$permissao = 'Operacional';
+		$permissao = 'OPERACIONAL';
 	}
+	
 	$data_admissao			=	date("d/m/Y", strtotime($data_admissao));
 	echo "
 		<tr>
 			<td>$cont</td>
 			<td style='text-transform:uppercase;'>$nome</td>
 			<td style='text-transform:uppercase;'>$usuario</td>
-			
+
+			<td >$permissao</td>
 			<td>$data_admissao</td>
-			<td><a href='../cadastro/cad_func.php?id=$id'><i class='editar'></i></a><a href='../alteracao/alt_senha.php?id=$id'><i class='editar_senha'></i></a> <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
-		</tr>";
+			";
+			if($permissao_sessao==0){
+				echo"<td><a href='../cadastro/cad_func.php?id=$id'><i class='editar'></i></a><a href='../alteracao/alt_senha.php?id=$id'><i class='senha' ></i></a> <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>";
+			}
+		echo "</tr>";
 }
 ?>								
 	

@@ -29,7 +29,8 @@ if(!$linhas){
 			<th style="width: 28px;">Nº</th>
 			<th>Descrição</th>
 			<th style="width: 75px;">Valor Unit.</th>
-			<th style="width: 51px;">Opções</th>
+			<?php if($permissao_sessao==0){ echo '	<th style="width: 51px;">Opções</th>';} ?>
+
 		</tr>
 		</thead>
 <?PHP
@@ -46,8 +47,12 @@ while($dados 	= 	 mysql_fetch_array($query))
 			<td>$cont</td>
 			<td style='text-transform: lowercase;'>$nome_item</td>
 			<td>R$ $vlr_unitario</td>
-			<td><a href='../cadastro/cad_item.php?id=$id'><i class='editar'></i></a>
-			<a href='../exclusao/del_item.php?id=$id'><i class='excluir'></i></a></td>
+			";
+			if($permissao_sessao==0){
+				echo"
+				<td><a href='../cadastro/cad_item.php?id=$id'><i class='editar'></i></a>
+				<a href='../exclusao/del_item.php?id=$id'><i class='excluir'></i></a></td>";
+			}echo"
 		</tr>";
 }
 ?>								
@@ -60,7 +65,11 @@ while($dados 	= 	 mysql_fetch_array($query))
 		?>
 		
 </div>
-		<?php $href = "/cadastro/cad_item.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
-	
+		<?php 
+		
+		if($permissao_sessao==0){
+			$href = "/cadastro/cad_item.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; 
+		}
+		?>
 	</body>
 </html>

@@ -1,11 +1,12 @@
 <?php		
+@session_start();
 ob_start();
 include "../conexao.php";
 include "../funcoes/funcoesbd/funcoesbd.php";
 
+$id_funcionario = $_SESSION['id_funcionario'];
 if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 
-	$id_funcionario = $_POST['funcionario'];
 	$id_mesa2	  	= $_POST['mesa'];
 	$data_entrada  	= date("Y-m-d H:i:s");
 	$cont_erro 		= 0;
@@ -28,28 +29,13 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 	
 	<form name="cadastro_contas" class="form" method="POST" action="cad_conta.php">
 	<div class="area_de_tabelas">
-			<label for="funcionario" id="labelcentro">Funcionário:</label>
-				<select name='funcionario' id='funcionario'>
-				<option value="">--Funcionario--</option>
-				<?php
-					   $sql = "SELECT * FROM funcionario ORDER BY nome_funcionario";
-					   $res = mysql_query($sql) or die ("Erro: ".mysql_error());
-						$registro="";
-						while ($linha = mysql_fetch_array($res, MYSQL_ASSOC)){
-						   
-							echo "<option value='".$linha["id_funcionario"]."'";
-							
-							echo ">".$linha["nome_funcionario"]."</option>";  	
-						}
-											
-				?>						 
-			   </select>
+
 			<br />
 			<label for="mesa" id="labelcentro">Mesa:</label>
 				<select name='mesa' id='mesa'>
 				<option value="">--MESA--</option>
 				<?php
-					   $sql = "SELECT * FROM  MESA ";
+					   $sql = "SELECT * FROM  MESA where status='L'";
 					   $res = mysql_query($sql) or die ("Erro: ".mysql_error());
 					   
 						$registro="";
@@ -75,13 +61,21 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 		$campos=array
 		(
 			'data_entrada' 	   				 => $data_entrada,
-			'FUNCIONARIO_id_funcionario'     => $id_funcionario,
+			'FUNCIONARIO_id_funcionario'     =>  $id_funcionario,
 			'status_conta'   			     => 'A',
 			'MESA_id_mesa'					 => $id_mesa2 								  
 		);
 		//passa qual é a tabela pois a função está esperando pela tabela e pelos campos
 		$sucesso = inclusaobd("conta",$campos);	
+		$campos2=array
+		(
+			'status' 	   				 => 'O'								  
+		);
+		$where = "where id_mesa=$id_mesa2";
+		
 		if($sucesso){
+		
+			$alt_pos_mesa  = alteracaobd("mesa",$campos2,$where);	
 			//pega o ultimo registro inserido e redireciona pra pagina de pedidos para lançar os pedidos nessa conta
 			$query_conta="SELECT id_conta FROM conta ORDER BY id_conta DESC LIMIT 1";
 			$executar_query=mysql_query($query_conta);

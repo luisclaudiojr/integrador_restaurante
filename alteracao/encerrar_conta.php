@@ -7,6 +7,9 @@ $id_conta		=	$_GET['id_conta'];
 $linha_afetada	=	mysql_num_rows(mysql_query("SELECT status_pedido FROM PEDIDO WHERE CONTA_id_conta=$id_conta and status_pedido='P'"));
 //verifica se há pedidos pendentes, se houver ele não deixa você encerrar a conta!
 
+$mesa			=	mysql_fetch_array(mysql_query("SELECT MESA_id_mesa FROM conta WHERE id_conta=$id_conta"));
+$id_mesa		=   $mesa['MESA_id_mesa'];
+
 if($linha_afetada>0){
 		header("location: ../consulta/contas.php?pedidos=pendentes ");
 }else{
@@ -110,6 +113,14 @@ if($linha_afetada>0){
 					);
 			$condicao = "where id_conta = $id_conta";
 			$sucesso  = alteracaobd("conta", $campos, $condicao);
+			//passa como L (liberado) o status da mesa se houver a alteração e encerramento da conta
+			$campos2=array
+			(
+				'status' 	   				 => 'L'								  
+			);
+			
+			$where = "where id_mesa=$id_mesa";
+			$alt_pos_mesa  = alteracaobd("mesa",$campos2,$where);	
 			header("location: ../consulta/contas.php ");
 
 		}

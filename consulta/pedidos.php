@@ -1,6 +1,11 @@
 <?php
 $id_conta	=	$_GET['id_conta'];
 $nro_mesa	=	$_GET['mesa'];
+include "../conexao.php";
+//status P = Pendente  - E = Entregue
+$query			=	 mysql_query("Select id_pedido,data_pedido,status_pedido,entrega_pedido,qtd,nome_item,descricao_pedido from pedido INNER JOIN ITEM ON(pedido.ITEM_id_item=item.id_item) where CONTA_id_conta='$id_conta'");
+//VERIFICA SE HÁ REGISTROS
+$linhas	=	mysql_num_rows($query);
 ?>
 <html>
 	
@@ -17,8 +22,11 @@ $nro_mesa	=	$_GET['mesa'];
 			<ul>
 		</div>
 
-
+	
 	<div class="area_de_tabelas">
+	<?php 
+	//SE HOUVER ELE TRAZ A CONSULTA
+	if($linhas){ ?>
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<thead>
 		<tr>
@@ -33,10 +41,8 @@ $nro_mesa	=	$_GET['mesa'];
 		</tr>
 	</thead>
 <?php		
-include "../conexao.php";
+
 $cont			=	0;
-//status P = Pendente  - E = Entregue
-$query			=	 mysql_query("Select id_pedido,data_pedido,status_pedido,entrega_pedido,qtd,nome_item,descricao_pedido from pedido INNER JOIN ITEM ON(pedido.ITEM_id_item=item.id_item) where CONTA_id_conta='$id_conta'");
 
 while($dados 	= 	 mysql_fetch_array($query))
 {
@@ -72,6 +78,9 @@ while($dados 	= 	 mysql_fetch_array($query))
 }
 ?>								
 	</table>
+	<?php }else{
+		echo "<p class='sem_registros'>NÃO HÁ NENHUM PEDIDO PARA ESSA CONTA</p>";
+	}?>
 	</div>
 	
 	<?php $href = "/cadastro/cad_pedido.php?id_conta=$id_conta"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>

@@ -12,6 +12,9 @@ CREATE  TABLE IF NOT EXISTS `restaurante`.`FUNCIONARIO` (
   `id_funcionario` INT NOT NULL AUTO_INCREMENT ,
   `nome_funcionario` VARCHAR(60) NULL ,
   `data_admissao` DATETIME NULL ,
+  `senha` VARCHAR(100) NULL ,
+  `usuario` VARCHAR(100) NULL ,
+  `permissao` INT NULL ,
   PRIMARY KEY (`id_funcionario`) )
 ENGINE = InnoDB;
 
@@ -89,25 +92,6 @@ CREATE  TABLE IF NOT EXISTS `restaurante`.`PEDIDO` (
   CONSTRAINT `fk_PEDIDO_ITEM1`
     FOREIGN KEY (`ITEM_id_item` )
     REFERENCES `restaurante`.`ITEM` (`id_item` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `restaurante`.`USUARIO`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `restaurante`.`USUARIO` (
-  `id_usuario` INT NOT NULL ,
-  `usuario` VARCHAR(100) NULL ,
-  `senha` VARCHAR(100) NULL ,
-  `permissao` INT NULL ,
-  `FUNCIONARIO_id_funcionario` INT NOT NULL ,
-  PRIMARY KEY (`id_usuario`, `FUNCIONARIO_id_funcionario`) ,
-  INDEX `fk_USUARIO_FUNCIONARIO1_idx` (`FUNCIONARIO_id_funcionario` ASC) ,
-  CONSTRAINT `fk_USUARIO_FUNCIONARIO1`
-    FOREIGN KEY (`FUNCIONARIO_id_funcionario` )
-    REFERENCES `restaurante`.`FUNCIONARIO` (`id_funcionario` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

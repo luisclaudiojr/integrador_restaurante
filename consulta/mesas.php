@@ -19,7 +19,12 @@
 		<tr>
 			<th style="width: 30px;">ID</th>
 			<th style="width: 76px;">Nº da Mesa</th>
-			<th style="text-align: right;">Opções</th>
+			<?php
+			if($permissao_sessao==0){
+				echo'<th style="text-align: right;">Opções</th>';
+			}
+			?>
+		
 		</tr>
 		</thead>
 		<?php		
@@ -35,9 +40,11 @@ while($dados 	= 	 mysql_fetch_array($query))
 	echo "
 		<tr>
 			<td>$cont</td>
-			<td>$nro_mesa</td>
-			<td style='text-align: right;'><a href='../exclusao/del_mesa.php?id=$id_mesa'><i class='excluir'></a></td>
-		</tr>";  
+			<td>$nro_mesa</td>";
+			if($permissao_sessao==0){
+				echo "<td style='text-align: right;'><a href='../exclusao/del_mesa.php?id=$id_mesa'><i class='excluir'></a></td>";
+			}
+		echo"</tr>";  
 }
 ?>								
 
@@ -52,7 +59,11 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</div>
 	
-		<?php $href = "/cadastro/cad_mesa.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
-	
+		<?php 
+		
+		if($permissao_sessao==0){
+			$href = "/cadastro/cad_mesa.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php";
+		}
+		?>
 	</body>
 </html>

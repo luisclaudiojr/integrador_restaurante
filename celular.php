@@ -1,3 +1,6 @@
+<?php
+include_once "includes/valida_sessao.php";
+?>
 <html>
 
 <head>
@@ -10,7 +13,7 @@
 <tr>
 	<td>
 	
-		<iframe id="iframe_menu" style="width: 324px;height: 483px;border: 0;overflow: hidden;" scrolling="no" src="http://restaurante.com/navegacao_mobile.html"></iframe>
+		<iframe id="iframe_menu" style="width: 324px;height: 483px;border: 0;overflow: hidden;" scrolling="no" src="/navegacao_mobile.html"></iframe>
 		
 	</td>
 </tr>
