@@ -78,7 +78,7 @@ echo"
 				<td>$nome_item</td>
 				<td>$descricao</td>
 				<td>$tempo_espera Min</td>
-					<td><a href='../alteracao/alt_pos_pedido.php?id_pedido=$id_pedido&pendentes=true'><i class='editar'></i></a></td>
+					<td><a href='../alteracao/alt_pos_pedido.php?id_pedido=$id_pedido&pendentes=true'><i class='entrega'></i></a></td>
 		</tr>
 		
 		";

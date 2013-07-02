@@ -25,6 +25,7 @@ i.itens { background: url("/_assets/img/icons/itens.png") center no-repeat; }
 i.mesas { background: url("/_assets/img/icons/mesas.png") center no-repeat; }
 i.faturamento { background: url("/_assets/img/icons/faturamento.png") center no-repeat; }
 i.pendencias { background: url("/_assets/img/icons/pendencias.png") center no-repeat; }
+i.logout { background: url("/_assets/img/icons/logout.png") center no-repeat; }
 i.editar { background: url("/_assets/img/icons/editar.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
 i.ver { background: url("/_assets/img/icons/ver.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
 i.fechar_conta { background: url("/_assets/img/icons/fechar_conta.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
@@ -33,6 +34,7 @@ i.incluir { background: url("/_assets/img/icons/incluir.png") center no-repeat; 
 i.consultar { background: url("/_assets/img/icons/consultar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 i.cancelar { background: url("/_assets/img/icons/cancelar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 i.data { background: url("/_assets/img/icons/data.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
+i.entrega { background: url("/_assets/img/icons/entrega.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-right: 4;}
 
 
 

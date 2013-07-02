@@ -10,9 +10,10 @@ $nro_mesa	=	$_GET['mesa'];
 
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_3" data-titulo="contas" href="/consulta/contas.php"><i class="contas"></i>Contas em Aberto</a></li>
-				<li><a class="desabilitar_link fundo_4" data-titulo="pedido" "><i class="itens"></i>Pedidos da Mesa <?php echo $nro_mesa; ?></a></li>
+			
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_contas.php"; ?>
+				<li><a style="background:rgb(133,133,133);" class="desabilitar_link" data-titulo="pedido" "><i class="incluir"></i>Pedidos da Mesa <?php echo $nro_mesa; ?></a></li>
 			<ul>
 		</div>
 
@@ -27,7 +28,7 @@ $nro_mesa	=	$_GET['mesa'];
 			<th>Descrição</th>
 			<th style="width: 112px;">Data</th>
 			<th style="width: 112px;">Entrega</th>
-			<th style="width: 80px;">Status</th>
+			<th style="width: 90px;">Status</th>
 			<th style="width: 51px;">Opções</th>
 		</tr>
 	</thead>
@@ -63,8 +64,8 @@ while($dados 	= 	 mysql_fetch_array($query))
 			<td>$descricao</td>
 			<td>$data_pedido</td>
 			<td>$entrega_pedido</td>
-			<td>$status</td>
-			<td><a href='../alteracao/alt_pos_pedido.php?id_pedido=$id_pedido&mesa=$nro_mesa&conta=$id_conta'><i class='editar'></i></a>
+			<td>$status "; if ($status=='Pendente'){echo "<a href='../alteracao/alt_pos_pedido.php?id_pedido=$id_pedido&mesa=$nro_mesa&conta=$id_conta'><i class='entrega'></i></a>";} echo" </td>
+			<td>
 			<a href='../exclusao/del_pedido.php?id_pedido=$id_pedido&id_conta=$id_conta&mesa=$nro_mesa'><i class='excluir'></i></a></td>			
 		</tr>";
 		

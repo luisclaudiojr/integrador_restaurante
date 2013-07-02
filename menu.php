@@ -22,5 +22,7 @@
 			#menu ul li a:hover { }
 		</style>
 		
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_logout.php"; ?>
+		
 	</body>
 </html>

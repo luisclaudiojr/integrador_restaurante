@@ -41,9 +41,9 @@ if($linha_afetada>0){
 	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_3" data-titulo="contas" ><i class="contas"></i>Contas em Aberto</a></li>
-				<li><a class="desabilitar_link fundo_6" data-titulo="contas" ><i class="faturamento"></i>Encerrar Conta <?php echo $id_conta; ?></a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_contas.php"; ?>
+				<li><a style="background:rgb(133,133,133);" class="desabilitar_link" data-titulo="contas" ><i class="faturamento"></i>Encerrar Conta <?php echo $id_conta; ?></a></li>
 			<ul>
 		</div>
 
@@ -91,8 +91,7 @@ if($linha_afetada>0){
 				
 			</div>
 			
-							<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
-				<a href="javascript:window.history.go(-1)" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_salvar_cancelar.php"; ?>
 			
 	</form>
 

@@ -1,1 +1,1 @@
-<li><a href="/consulta/pedidos_pendentes.php" class="desabilitar_link fundo_7" data-titulo="pendencias"><i class="pendencias"></i>Pedidos Pendentes</a></li>
+<li><a href="/consulta/pedidos_pendentes.php" class="desabilitar_link fundo_6" data-titulo="pendencias"><i class="pendencias"></i>Pedidos Pendentes</a></li>
