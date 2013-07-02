@@ -34,8 +34,8 @@ $linha_afetada	=	mysql_num_rows($query);
 //verifica se hÃ¡ pedidos pendentes, se houver ele nÃ£o deixa vocÃª encerrar a conta!
 
 if($linha_afetada==0){
-	echo'<div class="msg_sucesso">Não há Nenhum Pedido Pendente!</div>';
-				
+	echo "<p class='sem_registros'>NÃO HÁ NENHUM PEDIDO PENDENTE!</p>";
+	
 }else{
 echo"
 

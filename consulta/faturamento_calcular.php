@@ -19,8 +19,13 @@ while($dados	= mysql_fetch_array($query, MYSQL_ASSOC)){
 	$valor_total	=	$valor_total+$valor;
 
 }
+		//converte as datas padrao brasileiro
+	$data1	=	date("d/m/Y", strtotime($data1));
+	$data2	=	date("d/m/Y", strtotime($data2));
 
 $total_array 		=	count($valor_array);
+
+
 
 ?>
 
@@ -61,12 +66,14 @@ $total_array 		=	count($valor_array);
 			<td></td>
 			<td>R$ <?php echo $valor_total; ?></td>
 		</tr>
-	</table>	
-		
+	</table>
+	
+	
+	
 		
 <?php
 }else{
-	header("location: ../consulta/faturamento.php?faturamento=false ");
+	header("location: ../consulta/faturamento.php?excluido=false ");
 }
 ?>
 

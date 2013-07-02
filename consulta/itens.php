@@ -13,7 +13,17 @@
 		</div>
 	
 	<div class="area_de_tabelas">
-	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+<?php		
+include "../conexao.php";
+$cont			=	0;
+$query			=	 mysql_query("Select * from item");
+$linhas			=	 mysql_num_rows($query);
+if(!$linhas){
+	echo "<p class='sem_registros'>NÃO HÁ ITENS CADASTRADOS</p>";
+}ELSE{
+?>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<thead>
 		<tr>
 			<th style="width: 28px;">Nº</th>
@@ -22,11 +32,7 @@
 			<th style="width: 51px;">Opções</th>
 		</tr>
 		</thead>
-<?php		
-include "../conexao.php";
-$cont			=	0;
-$query			=	 mysql_query("Select * from item");
-
+<?PHP
 while($dados 	= 	 mysql_fetch_array($query))
 {
 	$cont++;
@@ -49,6 +55,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 	<br />
 
 		<?php
+		}
 		include "../includes/verifica_get.php";
 		?>
 		
