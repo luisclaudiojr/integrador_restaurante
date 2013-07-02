@@ -20,15 +20,7 @@ if ((isset($_POST['Alterar'])) && ($_POST['Alterar'] == 'Alterar')){
 			<legend>ALTERAR  ITENS</legend>
 				<p>
 					<label>Nome Item</label>
-					<?php
-					
-					if ((isset($_POST['Alterar'])) && ($_POST['Alterar'] == 'Alterar')){
-						if($nome_item == ""){
-							 echo "Informe o nome do Item"; 
-							$cont_erro++;
-						}
-					} ?>
-					
+	
 					<input type="text" id="nome_item" maxlength="50" required value='<?php echo $nome_item; ?>' name="nome_item">
 				</p>
 				<p>

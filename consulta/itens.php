@@ -46,6 +46,12 @@ while($dados 	= 	 mysql_fetch_array($query))
 }
 ?>								
 	</table>
+	<br />
+
+		<?php
+		include "../includes/verifica_get.php";
+		?>
+		
 </div>
 		<button class="fundo_1" ><a href="../cadastro/cad_item.php"><i class='incluir'></i> Incluir Itens</a></button>
 	
