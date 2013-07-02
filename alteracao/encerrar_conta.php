@@ -8,8 +8,7 @@ $linha_afetada	=	mysql_num_rows(mysql_query("SELECT status_pedido FROM PEDIDO WH
 //verifica se há pedidos pendentes, se houver ele não deixa você encerrar a conta!
 
 if($linha_afetada>0){
-	echo "Há algum pedido pendente para essa conta, por favor finalize-o para poder encerrar a conta";
-		echo "<br><a href='../consulta/contas.php'>Voltar</a>";
+		header("location: ../consulta/contas.php?pedidos=pendentes ");
 }else{
 	$valor_final		=	0;
 	$consulta_valor		=	mysql_query("Select qtd,vlr_unitario,nome_item from pedido inner join item ON( pedido.ITEM_id_item=item.id_item) where CONTA_id_conta=$id_conta");
@@ -116,7 +115,8 @@ if($linha_afetada>0){
 
 		}
 	}else{ //caso não há nenhum pedido, não tem como encerrar a conta, nesse caso é recomendado a exclusão
-		echo 'Não há pedidos para essa conta, por favor lance os registros para poder encerrar a conta';
+		header("location: ../consulta/contas.php?pedidos=inexistentes");
+
 	}
 }
 

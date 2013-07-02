@@ -89,28 +89,22 @@
 	</table>
 	
 	
-	
+	<?php 
+	include "../includes/verifica_get.php";
+	?>
 	
 	
 		<?php
-		if(isset($_GET['excluido'])){
-			$excluido=$_GET['excluido'];
+		if(isset($_GET['pedidos'])){
+			$pedidos=$_GET['pedidos'];
 			
 			echo "<br />";
 			
-			if($excluido=='true'){
-				?>
-
-					<div class="msg_sucesso">Conta excluida.</div>
-				
-				<?php
-				}else{
-				?>
-
-					<div class="msg_erro">Conta possui registros, exclua primeiro ítens desta conta.</div>
-				
-				<?php
-				}
+			if($pedidos=='inexistentes'){
+				echo'<div class="msg_erro">Conta não possui pedidos para ser encerrada!</div>';	
+			}else if ($pedidos=='pendentes'){
+				echo'	<div class="msg_erro">Conta Possui Pedidos pendentes para entrega!</div>';	
+			}
 				
 			}
 		
