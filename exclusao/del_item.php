@@ -9,8 +9,9 @@ $sucesso	=	exclusaobd("item",$condicao);
 
 
 if($sucesso){
-	header("location: ../consulta/itens.php ");
+	header("location: ../consulta/itens.phpexcluido=true");
 }else{
+	header("location: ../consulta/itens.php?excluido=false");
 	
 }
 

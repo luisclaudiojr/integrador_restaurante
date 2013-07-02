@@ -40,7 +40,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 			<td>$cont</td>
 			<td style='text-transform: lowercase;'>$nome_item</td>
 			<td>R$ $vlr_unitario</td>
-			<td><a href='../alteracao/cad_item.php?id=$id'><i class='editar'></i></a>
+			<td><a href='../cadastro/cad_item.php?id=$id'><i class='editar'></i></a>
 			<a href='../exclusao/del_item.php?id=$id'><i class='excluir'></i></a></td>
 		</tr>";
 }
