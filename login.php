@@ -1,7 +1,7 @@
 <?php
 	ob_start();
 	include "conexao.php";
-	if(isset($_POST['Acessar']) && $_POST['Acessar'] == ""){
+	if ((isset($_POST['Entrar'])) && ($_POST['Entrar'] == 'Entrar')){
 		$cont_erro=0;
 		$usuariologin=$_POST['txtusuario'];
 		$senhalogin=$_POST['txtsenha'];
@@ -54,29 +54,28 @@
 							<input style="margin-top:30px" class="input" type="text" name="txtusuario" required size="12" maxlength="30" style="border:1px solid #828282;">
 							<input class="input" type="password" name="txtsenha" required size="12" maxlength="30">
 
-							<input class="input entrar" type="submit" id="submit" value='Entrar'>
+							<input class="input entrar" name='Entrar' type="submit" id="submit" value='Entrar'>
 
 								
 
 									<?php
-									if(isset($_POST['Acessar']) && $_POST['Acessar'] == ""){
+									if ((isset($_POST['Entrar'])) && ($_POST['Entrar'] == 'Entrar')){
 										
 									
 											$senha1=md5($senhalogin);
 											$res=mysql_query("SELECT * FROM usuario  WHERE usuario ='$usuariologin'");
 
 											$dados=mysql_fetch_array($res);
-												$bd_usr=$dados['usuario'];
-												$bd_senha=$dados['senha'];
-												$bd_permissao=$dados['permissao'];
+												$bd_usr = $dados['usuario'];
+												$bd_senha = $dados['senha'];
 												
 										    if(($bd_usr==$usuariologin)and($bd_senha==$senha1)){
 												session_start();
-												$_SESSION['usuario']=$bd_usr;
-												$_SESSION['senha']=$bd_senha;
+												$_SESSION['usuario'] = $bd_usr;
+												$_SESSION['senha'] = $bd_senha;
 												$_SESSION['id_sessao']=session_id();				
 												
-												header ("Location: index.php");
+												header ("Location: menu.php");
 											}else{
 												echo ' Usuário e/ou senha incorretos!';
 											}
