@@ -19,6 +19,7 @@ body {
 
 i.menu { background: url("/_assets/img/icons/menu.png") center no-repeat; }
 i.funcionarios { background: url("/_assets/img/icons/funcionarios.png") center no-repeat; }
+i.funcionario { background: url("/_assets/img/icons/funcionario.png") center no-repeat; }
 i.contas { background: url("/_assets/img/icons/contas.png") center no-repeat; }
 i.itens { background: url("/_assets/img/icons/itens.png") center no-repeat; }
 i.mesas { background: url("/_assets/img/icons/mesas.png") center no-repeat; }
@@ -73,8 +74,8 @@ tbody tr:nth-child(odd) {  background-color: rgb(206, 220, 230);}
 td a {display: inline-block;}
 
 
-form#faturamento label	{ width: 125px;display: inline-block;text-align: right;margin-right: 5px;height: 24px;}
-form#faturamento input[type=date]	{ display: inline-block; clear:both; width: 138px;}
+form.form label	{ width: 125px;display: inline-block;text-align: right;margin-right: 5px;height: 24px;}
+form.form input[type=date]	{ display: inline-block; clear:both; width: 138px;}
 
 
 

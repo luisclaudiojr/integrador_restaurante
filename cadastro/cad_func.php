@@ -1,4 +1,19 @@
-﻿<?php		
+﻿	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	
+	<body>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_2" data-titulo="funcionarios"><i class="funcionarios"></i>Funcionarios</a></li>
+				<li><a class="desabilitar_link fundo_8" data-titulo="funcionario"><i class="funcionario"></i>Cadastrar/Alterar Funcionário</a></li>
+			<ul>
+		</div>
+
+		
+	
+		
+<?php		
 include "../conexao.php";
 include "../funcoes/funcoesbd/funcoesbd.php";
 
@@ -27,22 +42,26 @@ if(isset($_GET['id'])){
 	$action="cad_func.php";
 }	
 	?>
-	<form name="cadastro_funcionario" method="POST" action="<?php echo $action;?>">
-	<fieldset>
-			<legend>CADASTRO DE FUNCIONARIOS</legend>
+	<form name="cadastro_funcionario" class="form" method="POST" action="<?php echo $action;?>">
+	
+		<div class="area_de_tabelas">
 				<p>
-					<label>Nome</label>			
+					<label for="txtnome">Nome</label>
 					<input type="text" id="nome_func" maxlength="50" required value='<?php  if (isset($_GET['id'])){ echo $nomefunc; }?>' name="txtnome">
 				</p>
 				<p>
-					<label >Data de Admissão</label>
+					<label for="data_admissao">Data de Admissão</label>
 					<input type="date" id="data_admissao"  value="<?php  if (isset($_GET['id'])){ echo $data_admissao; }?>" name="data_admissao">
 				</p>
-				<p>
-					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="Limpar" class="button">
-				</p>
-				<a href="/consulta/funcionarios.php">Cancelar</a>
+				
+				<button class="fundo_1" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+
+				
+		</div>
+	</form>
+
+
+</body>
 </html>
 <?php
 //se cair aqui é porque é alteracao
@@ -87,3 +106,4 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 	}
 }
 ?>
+
