@@ -49,27 +49,43 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	
 		<?php
+		//trata para ver se foi excluido
 		if(isset($_GET['excluido'])){
-			$excluido=$_GET['excluido'];
-			
-			
-			
+			$excluido=$_GET['excluido'];	
 			if($excluido=='true'){
 				?>
-
 					<div class="msg_sucesso">Funcionário excluido.</div>
-				
 				<?php
 				}else{
 				?>
-
 					<div class="msg_erro">Funcionário possui registros, impossível excluir.</div>
-				
 				<?php
 				}
-				
 			}
-		
+			if(isset($_GET['alterado'])){
+				$alterado=$_GET['alterado'];	
+				if($alterado=='true'){
+				?>
+					<div class="msg_sucesso">Funcionário Alterado.</div>
+				<?php
+				}else{
+				?>
+					<div class="msg_erro">Ocorreu Algum erro ao alterar o Funcionario.</div>
+				<?php
+				}
+			}
+			if(isset($_GET['incluido'])){
+				$incluido=$_GET['incluido'];	
+					if($incluido=='true'){
+						?>
+							<div class="msg_sucesso">Funcionário incluido com sucesso.</div>
+						<?php
+						}else{
+						?>
+							<div class="msg_erro">Ocorreu Algum erro ao Incluir o Funcionário.</div>
+						<?php
+						}
+			}
 		?>
 		
 

@@ -56,7 +56,14 @@ if(isset($_GET['id'])){
 		);
 		$condicao = " where id_funcionario=$id";
 		$sucesso = alteracaobd("funcionario",$campos,$condicao);	
+			if($sucesso)
+			{
+			 header ("Location: ../consulta/funcionarios.php?alterado=true");
+			}else{
+			 header ("Location: ../consulta/funcionarios.php?alterado=false");
+			}
 	}
+	
 }
 //se não é apenas inclusao
 else{
@@ -71,11 +78,12 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 		);
 		//passa qual é a tabela pois a função está esperando pela tabela e pelos campos
 		$sucesso = inclusaobd("funcionario",$campos);	
-		if($sucesso){
-			echo "Registro Inserido";
-		}else{
-			echo "Erro ao Inserir";
-		}
+			if($sucesso)
+			{
+			 header ("Location: ../consulta/funcionarios.php?incluido=true");
+			}else{
+			 header ("Location: ../consulta/funcionarios.php?incluido=false");
+			}
 	}
 }
 ?>
