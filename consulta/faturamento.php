@@ -12,9 +12,13 @@
 			<ul>
 		</div>
 	
-	<?php if($permissao_sessao==0){ ?>
+	
 		<form action="faturamento_calcular.php" class="form" name="fat" method="POST">
 		<div class="area_de_tabelas">
+		<br />
+	
+	<?php if($permissao_sessao==0){ ?>
+
 			<label for="data">Periodo Inicial</label><input type="date" name="data" id="data" value="<?php echo date("Y-m-d"); ?>" >
 			<br />
 			<label for="data2">Periodo final</label><input type="date" name="data2" id="data2" value="<?php echo date("Y-m-d"); ?>" >
