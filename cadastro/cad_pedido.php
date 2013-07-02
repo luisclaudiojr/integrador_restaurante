@@ -59,7 +59,7 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 		$sucesso = inclusaobd("pedido",$campos);	
 			
 		if($sucesso){
-				?> <div class="msg_sucesso">Registro excluido.</div> <?php
+				?> <div class="msg_sucesso">Registro Incluído.</div> <?php
 				//header("Location: ../cadastro/cad_pedido.php?id=$id_conta_final");
 		}else{
 			?> <div class="msg_erro">Erro ao inserir.</div> <?php
