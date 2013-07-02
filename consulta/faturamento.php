@@ -28,10 +28,10 @@
 	
 	
 		<?php
-		if(isset($_GET['excluido'])){
-			$excluido=$_GET['excluido'];
+		if(isset($_GET['faturamento'])){
+			$faturamento=$_GET['faturamento'];
 			
-			if($excluido=='true'){
+			if($faturamento=='true'){
 					// <div class="msg_sucesso">Não há msg de sucesso neste caso</div>
 				}else{
 				?>

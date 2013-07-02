@@ -6,7 +6,7 @@ include "../conexao.php";
 $valor_total	=	0;
 $data1			=	$_POST['data'];
 $data2			=	$_POST['data2'];
-$sql			=   "Select data_entrada,id_conta,vlr_total from conta where data_entrada>='$data1' and data_entrada<='$data2' and status_conta='F' ORDER BY DATA_ENTRADA";
+$sql			=   "Select data_entrada,id_conta,vlr_total from conta where data_entrada>='$data1 00:00:00' and data_entrada<='$data2 23:59:59' and status_conta='F' ORDER BY DATA_ENTRADA";
 $query			=	mysql_query($sql);
 $linhas			=	mysql_num_rows($query);
 if($linhas){
@@ -61,22 +61,12 @@ $total_array 		=	count($valor_array);
 			<td></td>
 			<td>R$ <?php echo $valor_total; ?></td>
 		</tr>
-	</table>
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
+	</table>	
 		
 		
 <?php
 }else{
-	header("location: ../consulta/faturamento.php?excluido=false ");
+	header("location: ../consulta/faturamento.php?faturamento=false ");
 }
 ?>
 
