@@ -13,16 +13,7 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 		<fieldset>
 			<legend>CADASTRO DE MESAS</legend>
 				<p>
-					<label>mesa</label>
-					<?php
-					
-					if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
-						if($nro_mesa == ""){
-							echo "Informe o Nro da Mesa"; 
-							$cont_erro++;
-						}
-					} ?>
-					
+					<label>Mesa</label>				
 					<input type="text" id="mesa_func" maxlength="3" required value='<?php if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){ echo $nro_mesa ;}?>' name="nromesa">
 				</p>
 			
@@ -44,9 +35,9 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 		//passa qual é a tabela pois a função está esperando pela tabela e pelos campos
 		$sucesso = inclusaobd("mesa",$campos);	
 		if($sucesso){
-			echo "Registro Inserido";
-		}else{
-			echo "Erro ao Inserir";
+			header("location: ../consulta/mesas.php?incluido=true");	
+		}else{		
+			header("location: ../consulta/mesas.php?incluido=false");	
 		}
 	}
 }
