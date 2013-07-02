@@ -39,7 +39,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 			<td>$cont</td>
 			<td style='text-transform:uppercase;'>$nome</td>
 			<td>$data_admissao</td>
-			<td><a href='../alteracao/alt_func.php?id=$id'><i class='editar'></i></a>  <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
+			<td><a href='../cadastro/cad_func.php?id=$id'><i class='editar'></i></a>  <a href='../exclusao/del_func.php?id=$id'><i class='excluir'></i></a></td>
 		</tr>";
 }
 ?>								
