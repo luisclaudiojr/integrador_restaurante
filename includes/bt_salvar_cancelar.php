@@ -1,0 +1,2 @@
+<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+<a href="javascript:window.history.go(-1)" class="fundo_8"><i class='cancelar'></i>Cancelar</a>

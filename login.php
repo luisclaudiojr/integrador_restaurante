@@ -8,29 +8,56 @@
 	}
 ?>
 <html>
-<head>
-	<title>Integrador</title>
-	
-</head>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
 	
 <body>	
 		<div id="conteudo" align="center">
 				<div id="login">				
 						<form name="login" method="post" action="login.php">
-							<table border="0" valign="bottom">
-								<tr>
-								<td align="center" ><font size="2">Usu&aacute;rio</td>
-								<td align="center"><font size="2">Senha</td>
-								<td>&nbsp;</td>
-								</tr>
-								<tr>
-								<td><input type="text" name="txtusuario" required size="12" maxlength="30" style="border:1px solid #828282;"></td>
-								<td><input type="password" name="txtsenha" required size="12" maxlength="30" style="border:1px solid #828282;"></td>
-								<td><input type="submit" id="submit" value='Acessar' ></td>
-								</tr>
-								<tr>
+						
+							<style>
 								
-								<td colspan="3" >
+								.input { color:gray; font-size:1em;display:block; background:white; border:1px solid silver;width:18	0px; padding:5px; border-radius:3px; margin:5px; }
+								
+								
+								.entrar {
+								border-style: none;
+								   border-top: 1px solid #b8ffc0;
+								   background: #28692a;
+								   background: -webkit-linear-gradient(top, rgb(61, 196, 48), rgb(24, 153, 29));
+								   padding: 8px 16px;
+								   -webkit-border-radius: 4px;
+								   -moz-border-radius: 4px;
+								   border-radius: 4px;
+								   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+								   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+								   box-shadow: rgba(0,0,0,1) 0 1px 0;
+								   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+								   color: white;
+								   font-weight: bold;
+								   text-decoration: none;
+								   vertical-align: middle;
+								   }
+								.entrar:hover {
+								   border-top-color: #2f8c27;
+								   background: rgb(47, 177, 35);
+								   color: #ccc;
+								   }
+								.entrar:active {
+								   border-top-color: #1b400f;
+								   background: #1b400f;
+								   }
+								
+								
+							</style>
+							
+							<input style="margin-top:30px" class="input" type="text" name="txtusuario" required size="12" maxlength="30" style="border:1px solid #828282;">
+							<input class="input" type="password" name="txtsenha" required size="12" maxlength="30">
+
+							<input class="input entrar" type="submit" id="submit" value='Entrar'>
+
+								
+
 									<?php
 									if(isset($_POST['Acessar']) && $_POST['Acessar'] == ""){
 										
@@ -57,9 +84,7 @@
 										
 									}
 									?>
-								</td>
-								</tr>
-							</table>
+
 						</form>
 
 </body>
