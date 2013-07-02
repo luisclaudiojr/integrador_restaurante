@@ -1,4 +1,4 @@
-﻿	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
 	
 	<body>
 	
@@ -54,7 +54,7 @@ if(isset($_GET['id'])){
 					<input type="date" id="data_admissao"  value="<?php  if (isset($_GET['id'])){ echo $data_admissao; }?>" name="data_admissao">
 				</p>
 				
-				<button class="fundo_1" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
 
 				
 		</div>

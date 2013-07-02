@@ -8,7 +8,7 @@
 				<?php
 				}else{
 				?>
-					<div class="msg_erro">Não foi Possivel Excluir Registro,Verifique se ele ja possui algum registro que faça uso dele.</div>
+					<div class="msg_erro">NÃ£o foi Possivel Excluir Registro,Verifique se ele ja possui algum registro que faÃ§a uso dele.</div>
 				<?php
 				}
 			}

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $id_conta	=	$_GET['id_conta'];
 $nro_mesa	=	$_GET['mesa'];
 ?>

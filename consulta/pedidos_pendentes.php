@@ -14,7 +14,7 @@
 	<div class="area_de_tabelas">
 <?php
 
-// Função para calcular horário
+// FunÃ§Ã£o para calcular horÃ¡rio
 function dif_horario($horario1, $horario2) {
     //$horario1 = strtotime("$horario1");
     //$horario2 = strtotime("$horario2");
@@ -31,10 +31,10 @@ include "../conexao.php";
 $query=mysql_query("SELECT nro_mesa,id_conta,data_pedido,descricao_pedido,nome_item,qtd FROM PEDIDO inner join item on (ITEM.id_item=pedido.ITEM_id_item) INNER JOIN CONTA ON (pedido.CONTA_id_conta=CONTA.id_conta) INNER JOIN MESA ON (CONTA.MESA_id_mesa=MESA.id_mesa) WHERE status_pedido='P' ");
 
 $linha_afetada	=	mysql_num_rows($query);
-//verifica se há pedidos pendentes, se houver ele não deixa você encerrar a conta!
+//verifica se hÃ¡ pedidos pendentes, se houver ele nÃ£o deixa vocÃª encerrar a conta!
 
 if($linha_afetada=0){
-	echo "Não há pedidos pendentes!";
+	echo "NÃ£o hÃ¡ pedidos pendentes!";
 	echo '<a href="/menu.php" class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>';
 }else{
 echo"
@@ -47,7 +47,7 @@ echo"
 			<th style='width: 54px'>Data</th>
 			<th style='width: 27px '>Qtd</th>
 			<th>Item</th>
-			<th>Descrição</th>
+			<th>DescriÃ§Ã£o</th>
 			<th style='width: 71px'>Espera</th>
 			
 		</tr>
@@ -65,7 +65,7 @@ echo"
 		$data_pedido	=	date("h:i:s", strtotime($data_pedido));
 
 	
-		//usei uma classe do php que ja me faz o calculo da diferença entre as horas
+		//usei uma classe do php que ja me faz o calculo da diferenÃ§a entre as horas
 		$date_time 		=	new DateTime( $data_pedido );
 		$diff 			=	$date_time->diff( new DateTime( $data_atual) );
 		$tempo_espera	=	$diff->format( '%H:%i' );
@@ -81,7 +81,7 @@ echo"
 		</tr>
 		
 		";
-	}//o certo é fazer aparecer em vermelho os que aparecerem mais de 30min
+	}//o certo Ã© fazer aparecer em vermelho os que aparecerem mais de 30min
 }
 ?>
 	</div>

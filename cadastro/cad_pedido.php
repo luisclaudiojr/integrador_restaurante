@@ -1,4 +1,4 @@
-﻿<?php		
+<?php		
 ob_start();
 include "../conexao.php";
 include "../funcoes/funcoesbd/funcoesbd.php";

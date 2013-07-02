@@ -16,10 +16,10 @@
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<thead>
 		<tr>
-			<th style="width: 28px;">Nº</th>
-			<th>Descrição</th>
+			<th style="width: 28px;">NÂº</th>
+			<th>DescriÃ§Ã£o</th>
 			<th style="width: 75px;">Valor Unit.</th>
-			<th style="width: 51px;">Opções</th>
+			<th style="width: 51px;">OpÃ§Ãµes</th>
 		</tr>
 		</thead>
 <?php		

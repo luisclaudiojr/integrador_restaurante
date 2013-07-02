@@ -51,7 +51,7 @@
 												
 												header ("Location: index.php");
 											}else{
-												echo ' Usu·rio e/ou senha incorretos!';
+												echo ' Usu√°rio e/ou senha incorretos!';
 											}
 											
 										
