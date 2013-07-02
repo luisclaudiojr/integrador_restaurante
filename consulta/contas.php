@@ -8,7 +8,7 @@
 	$ver_conta		=	 mysql_num_rows($query);
 	if(!$ver_conta){
 		echo "NÃO HÁ NENHUMA CONTA EM ABERTO";
-	}else{
+		}else{
 ?>
 
 	
@@ -68,7 +68,6 @@
 				<td>$nome_func</td>
 				<td>R$ $valor_final</td>
 				<td><a href='../consulta/pedidos.php?id_conta=$id_conta&mesa=$nro_mesa'><i class='ver'></i></a>
-				<a href='../alteracao/alt_conta.php?id_conta=$id_conta'><i class='editar'></i></a>
 				<a href='../exclusao/del_conta.php?id_conta=$id_conta'><i class='excluir'></i></a>
 				<a href='../alteracao/encerrar_conta.php?id_conta=$id_conta'><i class='fechar_conta'></i></a></td>
 			</tr>";

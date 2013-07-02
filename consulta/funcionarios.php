@@ -45,6 +45,33 @@ while($dados 	= 	 mysql_fetch_array($query))
 ?>								
 	
 	</table>
+	<br />
+		<?php
+		if(isset($_GET['excluido'])){
+			$excluido=$_GET['excluido'];
+			
+			
+			
+			if($excluido=='true'){
+				?>
+
+					<div class="msg_sucesso">Funcionário excluido.</div>
+				
+				<?php
+				}else{
+				?>
+
+					<div class="msg_erro">Funcionário possui registros, impossível excluir.</div>
+				
+				<?php
+				}
+				
+			}
+		
+		?>
+		
+
+	
 	</div>
 	
 	<button class="fundo_1" ><a href="/cadastro/cad_func.php"><i class='incluir'></i>Incluir Funcionario</a></button>

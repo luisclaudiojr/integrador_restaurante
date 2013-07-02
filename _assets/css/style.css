@@ -30,6 +30,7 @@ i.fechar_conta { background: url("/_assets/img/icons/fechar_conta.png") center n
 i.excluir { background: url("/_assets/img/icons/excluir.png") center no-repeat;  display: block;width: 16px;height: 16px;margin-right: 8px;}
 i.incluir { background: url("/_assets/img/icons/incluir.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 i.consultar { background: url("/_assets/img/icons/consultar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
+i.cancelar { background: url("/_assets/img/icons/cancelar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 
 
 
@@ -43,7 +44,9 @@ i.consultar { background: url("/_assets/img/icons/consultar.png") center no-repe
 .fundo_5 { background: rgb(92, 67, 122) ;}
 .fundo_6 {background: rgb(133, 68, 9); }
 .fundo_7 {background: rgb(96, 128, 163);}
-.fundo_8 {background: rgb(0, 150, 235);}
+.fundo_8 {background: rgb(207, 116, 0);}
+.fundo_8 {background: rgb(207, 116, 0);}
+.fundo_8:hover {background: rgb(182, 102, 0);}
 
 
 button {border: 0;padding: 7px;text-transform: uppercase;font-size: 12px;border-radius: 3px;color: white;margin: 10px;	}
@@ -71,3 +74,8 @@ td a {display: inline-block;}
 
 form#faturamento label	{ width: 125px;display: inline-block;text-align: right;margin-right: 5px;height: 24px;}
 form#faturamento input[type=date]	{ display: inline-block; clear:both; width: 138px;}
+
+
+
+.msg_erro {	background: url("/_assets/img/icons/excluir.png") 14px 14px no-repeat;		background-color: rgb(255, 200, 200);padding: 10px;border: 1px solid rgb(255, 0, 0);border-radius: 4px;padding-left: 48px;color: rgb(136, 0, 0);text-transform: normal;}
+.msg_sucesso {	background: url("/_assets/img/icons/sucesso.png") 14px 14px no-repeat;		background-color: rgb(212, 255, 195);padding: 10px;border: 1px solid rgb(93, 155, 98);border-radius: 4px;padding-left: 48px;color: rgb(2, 129, 2);text-transform: normal;}
