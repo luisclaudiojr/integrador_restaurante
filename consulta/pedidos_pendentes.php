@@ -6,8 +6,8 @@
 	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_7" data-titulo="pendencias"><i class="pendencias"></i>Pedidos Pendentes</a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_pendencias.php"; ?>
 			<ul>
 		</div>
 

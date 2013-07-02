@@ -6,8 +6,8 @@
 	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_2" data-titulo="funcionarios"><i class="funcionarios"></i>Funcionarios</a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_funcionarios.php"; ?>
 			<ul>
 		</div>
 	
@@ -55,7 +55,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</div>
 	
-	<a href="/cadastro/cad_func.php"><button class="fundo_1" ><i class='incluir'></i>Incluir Funcionario</button></a>
+	<?php $href = "/cadastro/cad_func.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
 	
 	</body>
 </html>

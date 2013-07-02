@@ -13,7 +13,7 @@ body {
 .fe_menu_index ul li	{ background: ;}
 .fe_menu_index ul li a	{ background: ;padding:10px;display: block;color: white; text-decoration: none; text-transform: capitalize;}
 .fe_menu_index ul li a:hover	{ background: rgb(40, 40, 40);}
-.fe_menu_index ul li a.fe_titulo	{ background: rgb(0, 122, 255); text-transform: uppercase;}
+.fe_menu_index ul li a.fe_titulo	{ background: rgb(30, 47, 65) !important; border-left-color:rgb(30, 47, 65) !important; text-transform: uppercase;}
 .fe_menu_index ul li a.fe_titulo:hover	{ background: rgb(0, 94, 196);}
 .fe_menu_index ul li a i	{ display: block; margin-right:10px; width: 20px; height: 20px; float:left;}
 
@@ -37,22 +37,31 @@ i.data { background: url("/_assets/img/icons/data.png") center no-repeat; displa
 
 
 
-.fundo_1 { background: #52905d ;}
-.fundo_1:hover { background: #52905d ;}
-.fundo_2 { background: rgb(92, 67, 122) ;}
-.fundo_2:hover { background:rgb(80, 57, 107) !important;}
-.fundo_3 {background: rgb(133, 68, 9); }
-.fundo_4 {background: rgb(96, 128, 163);}
-.fundo_5 { background: rgb(92, 67, 122) ;}
-.fundo_6 {background: rgb(133, 68, 9); }
-.fundo_7 {background: rgb(96, 128, 163);}
-.fundo_8 {background: rgb(207, 116, 0);}
-.fundo_8 {background: rgb(207, 116, 0);}
-.fundo_8:hover {background: rgb(182, 102, 0);}
+.fundo_1 { background: rgb(83, 15, 170) ; border-color:rgb(83, 15, 170);}
+.fundo_1:hover { border-left-color:rgb(83, 15, 170) !important;}
+.fundo_2 { background: rgb(145, 15, 170) ;}
+.fundo_2:hover { border-left-color:rgb(145, 15, 170) !important;}
+.fundo_3 {background: rgb(170, 15, 89); }
+.fundo_3:hover { border-left-color:rgb(170, 15, 89) !important;}
+.fundo_4 {background: rgb(170, 52, 15);}
+.fundo_4:hover { border-left-color:rgb(170, 52, 15) !important;}
+.fundo_5 { background: rgb(170, 145, 15) ;}
+.fundo_5:hover { border-left-color:rgb(170, 145, 15) !important;}
+.fundo_6 {background: rgb(102, 170, 15); }
+.fundo_6:hover { border-left-color:rgb(102, 170, 15) !important;}
+.fundo_7 {background: rgb(15, 170, 164);}
+.fundo_7:hover { border-left-color:rgb(15, 170, 164) !important;}
+.fundo_8 {background: rgb(15, 89, 170);}
+.fundo_8:hover { border-left-color:rgb(15, 89, 170) !important;}
 
 
-button {border: 0;padding: 7px;text-transform: uppercase;font-size: 12px;border-radius: 3px;color: white;margin: 10px;	}
-button a { text-decoration: none; color: inherit;}
+
+.btn {display: inline-block; border: 0;padding: 7px;text-transform: uppercase;font-size: 12px;border-radius: 3px;color: white;margin: 10px;	}
+button a, .btn { text-decoration: none; color: inherit;}
+.btn.cancelar		{ background-color:rgb(189, 169, 68); }
+.btn.salvar,.btn.inluir	{ background-color:rgb(92, 165, 104); }
+.btn.consultar		{ background-color:rgb(123, 162, 162); }
+
 
 .area_de_tabelas {background: rgb(220, 220, 220);color: black ; padding:10px; padding-bottom:20px; }
 

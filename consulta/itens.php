@@ -60,7 +60,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 		?>
 		
 </div>
-		<button class="fundo_1" ><a href="../cadastro/cad_item.php"><i class='incluir'></i> Incluir Itens</a></button>
+		<?php $href = "/cadastro/cad_item.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
 	
 	</body>
 </html>

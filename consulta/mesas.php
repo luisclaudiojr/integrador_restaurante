@@ -4,10 +4,12 @@
 	
 	<body>
 	
+		
+	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_1" data-titulo="mesas"><i class="mesas"></i>Mesas</a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_mesas.php"; ?>
 			<ul>
 		</div>
 	
@@ -50,7 +52,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</div>
 	
-		<button class="fundo_1"><a href="../cadastro/cad_mesa.php"><i class='incluir'></i> Incluir Mesa</a></button>
+		<?php $href = "/cadastro/cad_mesa.php"; include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_incluir.php"; ?>
 	
 	</body>
 </html>

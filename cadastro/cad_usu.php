@@ -36,8 +36,7 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 					?>
 				</select>
 				<p>
-					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="Limpar" class="button">
+					<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_salvar_cancelar.php"; ?>
 				</p>
 				<a href="../index.php">Página Inicial</a>
 </html>

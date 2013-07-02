@@ -43,9 +43,9 @@ $total_array 		=	count($valor_array);
 
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a href='/consulta/faturamento.php' class="desabilitar_link fundo_6" data-titulo="faturamento"><i class="faturamento"></i>Faturamento</a></li>
-				<li><a class="desabilitar_link fundo_7"><i class="data"></i>Faturamento entre <?php echo $data1; ?> e  <?php echo $data2; ?> </a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_faturamento.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_faturamento_entre.php"; ?>
 			<ul>
 		</div>
 		

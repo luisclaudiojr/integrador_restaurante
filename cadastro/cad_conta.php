@@ -17,9 +17,9 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_3" data-titulo="contas" ><i class="contas"></i>Contas em Aberto</a></li>
-				<li><a class="desabilitar_link fundo_6" data-titulo="conta" ><i class="incluir"></i>Incluir Conta</a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_contas.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_cadastrar_alterar.php"; ?>
 			<ul>
 		</div>
 

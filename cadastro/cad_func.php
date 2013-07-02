@@ -4,9 +4,9 @@
 	
 		<div id='menu' class="fe_menu_index">
 			<ul>
-				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a class="desabilitar_link fundo_2" data-titulo="funcionarios"><i class="funcionarios"></i>Funcionarios</a></li>
-				<li><a class="desabilitar_link fundo_8" data-titulo="funcionario"><i class="funcionario"></i>Cadastrar/Alterar Funcionário</a></li>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_menu_principal.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_funcionarios.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/titulo_cadastrar_alterar.php"; ?>
 			<ul>
 		</div>
 
@@ -53,8 +53,7 @@ if(isset($_GET['id'])){
 
 				
 		</div>
-				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
-				<a href="/consulta/funcionarios.php" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/bt_salvar_cancelar.php"; ?>
 
 				
 
