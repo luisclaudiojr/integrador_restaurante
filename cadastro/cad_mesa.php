@@ -9,19 +9,30 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 }
 ?>
 <html>
-	<form name="cadastro_mesas" method="POST" action="cad_mesa.php">
-		<fieldset>
-			<legend>CADASTRO DE MESAS</legend>
-				<p>
-					<label>Mesa</label>				
+	
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_1" data-titulo="mesas"><i class="mesas"></i>Mesas</a></li>
+				<li><a class="desabilitar_link fundo_3" data-titulo="mesa"><i class="incluir"></i>Incluir Mesa</a></li>
+			<ul>
+		</div>
+	
+	<div class="area_de_tabelas">
+	<form class="form" name="cadastro_mesas" method="POST" action="cad_mesa.php">
+					<label for="nromesa">Mesa</label>				
 					<input type="text" id="mesa_func" maxlength="3" required value='<?php if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){ echo $nro_mesa ;}?>' name="nromesa">
-				</p>
-			
-				<p>
-					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="Limpar" class="button">
-				</p>
-				<a href="../index.php">Página Inicial</a>
+
+					</div>
+					
+				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+				<a href="/consulta/mesa.php" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+					
+					
+	</form>
+	</body>
 </html>
 <?php
 if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){

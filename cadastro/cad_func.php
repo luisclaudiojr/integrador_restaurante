@@ -45,19 +45,19 @@ if(isset($_GET['id'])){
 	<form name="cadastro_funcionario" class="form" method="POST" action="<?php echo $action;?>">
 	
 		<div class="area_de_tabelas">
-				<p>
 					<label for="txtnome">Nome</label>
 					<input type="text" id="nome_func" maxlength="50" required value='<?php  if (isset($_GET['id'])){ echo $nomefunc; }?>' name="txtnome">
-				</p>
-				<p>
-					<label for="data_admissao">Data de Admissão</label>
+					<br />
+					<label for="data_admissao">Admissão</label>
 					<input type="date" id="data_admissao"  value="<?php  if (isset($_GET['id'])){ echo $data_admissao; }?>" name="data_admissao">
-				</p>
-				
-				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
 
 				
 		</div>
+				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+				<a href="/consulta/funcionarios.php" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+
+				
+
 	</form>
 
 

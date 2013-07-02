@@ -19,6 +19,21 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 }
 ?>
 <html>
+	
+	
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_3" data-titulo="contas" href="/consulta/contas.php"><i class="contas"></i>Contas em Aberto</a></li>
+				<li><a class="desabilitar_link fundo_4" data-titulo="pedido" "><i class="itens"></i>Pedidos da Mesa <?php echo $nro_mesa; ?></a></li>
+			<ul>
+		</div>
+	
+	
+	
+	
 	<form name="cadastro_contas" method="POST" action="cad_pedido.php?id_conta=<?php echo $id_conta; ?>">
 		<fieldset>
 			<legend>CADASTRO DE PEDIDO NA CONTA <?php echo $id_conta. "   MESA:  ".$nro_mesa ?> </legend>			

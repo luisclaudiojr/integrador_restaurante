@@ -55,7 +55,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</div>
 	
-	<button class="fundo_1" ><a href="/cadastro/cad_func.php"><i class='incluir'></i>Incluir Funcionario</a></button>
+	<a href="/cadastro/cad_func.php"><button class="fundo_1" ><i class='incluir'></i>Incluir Funcionario</button></a>
 	
 	</body>
 </html>

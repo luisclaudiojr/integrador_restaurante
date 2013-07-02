@@ -75,7 +75,8 @@ td a {display: inline-block;}
 
 
 form.form label	{ width: 125px;display: inline-block;text-align: right;margin-right: 5px;height: 24px;}
-form.form input[type=date]	{ display: inline-block; clear:both; width: 138px;}
+form.form input, form.form select	{ display: inline-block; clear:both; width: 138px;}
+form.form input[type=date]	{ width: 138px;}
 
 
 

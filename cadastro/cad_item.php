@@ -27,22 +27,31 @@ if(isset($_GET['id'])){
 ?>
 
 <html>
-	<form name="cadastro_item" method="POST" action="<?php echo $action;?>">
-		<fieldset>
-			<legend>CADASTRO DE ITEM</legend>
-				<p>
-					<label>Nome Item</label>					
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a href='itens.php' class="desabilitar_link fundo_2" data-titulo="itens"><i class="itens"></i>Itens</a></li>
+								<li><a class="desabilitar_link fundo_6" data-titulo="item" ><i class="incluir"></i>Incluir/Alterar Item</a></li>
+			<ul>
+		</div>
+	
+	<form class="form" name="cadastro_item" method="POST" action="<?php echo $action;?>">
+		<div class="area_de_tabelas">
+					<label for="nome_item">Nome Item</label>					
 					<input type="text" id="nome_item" maxlength="50" required value='<?php if(isset($_GET['id'])){ echo $nome_item ;}?>' name="nome_item">
-				</p>
-				<p>
-					<label >Valor Unitario</label>
+				<br />
+					<label for="vlr_unitario">Valor Unitario</label>
 					<input type="text " id="vlr_unitario"  value="<?php if(isset($_GET['id'])){ echo $vlr_unitario; }?>" name="vlr_unitario">
-				</p>
-				<p>
-					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="Limpar" class="button">
-				</p>
-				<a href="../index.php">Página Inicial</a>
+			
+			</div>
+			
+				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+				<a href="javascript:window.history.go(-1)" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+			</form>
+				
+				
 </html>
 <?php
 if(isset($_GET['id'])){

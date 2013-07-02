@@ -12,10 +12,23 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 }
 ?>
 <html>
-	<form name="cadastro_contas" method="POST" action="cad_conta.php">
-		<fieldset>
-			<legend>CADASTRO DE CONTAS</legend>
-			<p><label id="labelcentro">Funcionário:</label>
+	
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
+	
+		<div id='menu' class="fe_menu_index">
+			<ul>
+				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
+				<li><a class="desabilitar_link fundo_3" data-titulo="contas" ><i class="contas"></i>Contas em Aberto</a></li>
+				<li><a class="desabilitar_link fundo_6" data-titulo="conta" ><i class="incluir"></i>Incluir Conta</a></li>
+			<ul>
+		</div>
+
+		
+	
+	
+	<form name="cadastro_contas" class="form" method="POST" action="cad_conta.php">
+	<div class="area_de_tabelas">
+			<label for="funcionario" id="labelcentro">Funcionário:</label>
 				<?php
 				if ((isset($_POST['Enviar'])) && ($_POST['Enviar'] == 'Enviar')){
 						if($funcionario==""){
@@ -38,8 +51,8 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 											
 				?>						 
 			   </select>
-			</p>
-			<p><label id="labelcentro">Mesa:</label>
+			<br />
+			<label for="mesa" id="labelcentro">Mesa:</label>
 				<?php
 				if ((isset($_POST['Enviar'])) && ($_POST['Enviar'] == 'Enviar')){
 						if($mesa==""){
@@ -63,12 +76,12 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 						}		
 				?>						 
 				</select>
-			</p>
-				<p>
-					<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="Limpar" class="button">
-				</p>
-				<a href="javascript:window.history.go(-1)">Cancelar</a>
+
+			</div>
+			
+				<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+				<a href="javascript:window.history.go(-1)" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+			</form>
 </html>
 <?php
 if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
