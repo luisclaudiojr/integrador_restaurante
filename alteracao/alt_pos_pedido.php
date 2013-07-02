@@ -1,10 +1,15 @@
 ﻿<?php		
 include "../conexao.php";
 include "../funcoes/funcoesbd/funcoesbd.php";
-
+$cont=0;
 $id	  	=	$_GET['id_pedido'];
+if(isset($_GET['pendentes'])){
+	$cont++;
+}else{
+$cont=0;
 $conta  =	$_GET['conta'];
 $mesa   = 	$_GET['mesa'];
+}
 $campos=array
 		(
 			'status_pedido' 	   => 'E',
@@ -13,8 +18,11 @@ $campos=array
 $condicao = "where id_pedido = $id";
 $sucesso  = alteracaobd("pedido", $campos, $condicao);
 if($sucesso){
-	echo "Registro Alterado";
-	header("location: ../consulta/pedidos.php?id_conta=$conta&mesa=$mesa ");
+	if($cont!=0)
+		header("location: consulta/pedidos_pendentes.php?alterado=true");
+	}else{
+		header("location: ../consulta/pedidos.php?id_conta=$conta&mesa=$mesa ");
+	}
 }else{
 	echo "Erro ao Alterar";
 }

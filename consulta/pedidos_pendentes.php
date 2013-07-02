@@ -47,9 +47,9 @@ echo"
 			<th style='width: 54px'>Data</th>
 			<th style='width: 27px '>Qtd</th>
 			<th>Item</th>
-			<th>DescriÃ§Ã£o</th>
+			<th>Descrição</th>
 			<th style='width: 71px'>Espera</th>
-			
+			<th style='width: 51px;'>Opções</th>		
 		</tr>
 		</thead>
 		";
@@ -78,6 +78,7 @@ echo"
 				<td>$nome_item</td>
 				<td>$descricao</td>
 				<td>$tempo_espera Min</td>
+					<td><a href='../alteracao/alt_pos_pedido.php?id_pedido=$id_pedido&pendentes=true'><i class='editar'></i></a></td>
 		</tr>
 		
 		";
