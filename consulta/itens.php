@@ -8,7 +8,7 @@
 		<div id='menu' class="fe_menu_index">
 			<ul>
 				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
-				<li><a href='/itens.php' class="desabilitar_link fundo_2" data-titulo="itens"><i class="itens"></i>Itens</a></li>
+				<li><a href='itens.php' class="desabilitar_link fundo_2" data-titulo="itens"><i class="itens"></i>Itens</a></li>
 			<ul>
 		</div>
 	
@@ -40,7 +40,7 @@ while($dados 	= 	 mysql_fetch_array($query))
 			<td>$cont</td>
 			<td style='text-transform: lowercase;'>$nome_item</td>
 			<td>R$ $vlr_unitario</td>
-			<td><a href='../alteracao/alt_item.php?id=$id'><i class='editar'></i></a>
+			<td><a href='../alteracao/cad_item.php?id=$id'><i class='editar'></i></a>
 			<a href='../exclusao/del_item.php?id=$id'><i class='excluir'></i></a></td>
 		</tr>";
 }

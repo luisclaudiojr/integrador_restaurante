@@ -57,10 +57,10 @@ if ((isset($_POST['Alterar'])) && ($_POST['Alterar'] == 'Alterar')){
 		$condicao = "where id_item = $id";
 		$sucesso  = alteracaobd("item", $campos, $condicao);
 		if($sucesso){
-			echo "Registro Alterado";
-			header("location: ../consulta/itens.php ");
+			
+			header("location: ../consulta/itens.php?alterado=true ");
 		}else{
-			echo "Erro ao Alterar";
+			header("location: ../consulta/itens.php?alterado=false ");
 		}
 	}
 }
