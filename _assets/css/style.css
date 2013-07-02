@@ -31,6 +31,7 @@ i.excluir { background: url("/_assets/img/icons/excluir.png") center no-repeat; 
 i.incluir { background: url("/_assets/img/icons/incluir.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 i.consultar { background: url("/_assets/img/icons/consultar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 i.cancelar { background: url("/_assets/img/icons/cancelar.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
+i.data { background: url("/_assets/img/icons/data.png") center no-repeat; display: inline-block ; width: 16px;height: 16px;margin-bottom: -3px;margin-right: 4;}
 
 
 
