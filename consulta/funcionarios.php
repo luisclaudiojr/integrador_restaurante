@@ -46,6 +46,8 @@ while($dados 	= 	 mysql_fetch_array($query))
 	
 	</table>
 	<br />
+	
+	
 		<?php
 		if(isset($_GET['excluido'])){
 			$excluido=$_GET['excluido'];

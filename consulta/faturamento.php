@@ -20,6 +20,32 @@
 			<label for="data2">Periodo final</label><input type="date" name="data2" id="data2" >
 				<br>
 		
+		
+		
+		
+		
+		
+	
+	
+		<?php
+		if(isset($_GET['excluido'])){
+			$excluido=$_GET['excluido'];
+			
+			if($excluido=='true'){
+					// <div class="msg_sucesso">Não há msg de sucesso neste caso</div>
+				}else{
+				?>
+					<br/><div class="msg_erro">Não há nenhum registro para este período.</div>
+				<?php
+				}
+			}
+		?>
+		
+		
+		
+		
+		
+		
 	
 		</div>
 		<button class="fundo_8" type="submit"><i class='consultar'></i>Consultar</button>

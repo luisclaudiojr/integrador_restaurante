@@ -24,8 +24,9 @@ $total_array 		=	count($valor_array);
 		}
 
 echo "VALOR TOTAL DAS CONTAS: R$ $valor_total<BR>";
+
 }else{
-Echo "Não existe fechamento para esse periodo";
+	header("location: ../consulta/faturamento.php?excluido=false ");
 }
 ?>
 <a href='/menu.php' class="desabilitar_link voltar_para_menu" data-titulo="menu">Voltar</a>

@@ -9,9 +9,9 @@ $sucesso	=	exclusaobd("mesa",$condicao);
 
 
 if($sucesso){
-	header("location: ../consulta/mesas.php ");
+	header("location: ../consulta/mesas.php?excluido=true ");
 }else{
-	
+	header("location: ../consulta/mesas.php?excluido=false ");
 }
 
 ?>

@@ -79,3 +79,6 @@ form#faturamento input[type=date]	{ display: inline-block; clear:both; width: 13
 
 .msg_erro {	background: url("/_assets/img/icons/excluir.png") 14px 14px no-repeat;		background-color: rgb(255, 200, 200);padding: 10px;border: 1px solid rgb(255, 0, 0);border-radius: 4px;padding-left: 48px;color: rgb(136, 0, 0);text-transform: normal;}
 .msg_sucesso {	background: url("/_assets/img/icons/sucesso.png") 14px 14px no-repeat;		background-color: rgb(212, 255, 195);padding: 10px;border: 1px solid rgb(93, 155, 98);border-radius: 4px;padding-left: 48px;color: rgb(2, 129, 2);text-transform: normal;}
+
+
+.sem_registros {color: gray; text-transform: lowercase; font-style: italic; margin-bottom:0;}

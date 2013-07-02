@@ -1,19 +1,10 @@
 ﻿<html>
 	
 	<?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php"; ?>
-
-<?php
-	include "../conexao.php";
-	$query			=	 mysql_query("Select id_conta,data_entrada,mesa.nro_mesa,nome_funcionario from conta  INNER JOIN mesa ON(conta.MESA_id_mesa=mesa.id_mesa)INNER JOIN funcionario ON(conta.FUNCIONARIO_id_funcionario=funcionario.id_funcionario) where status_conta='A' order by mesa.nro_mesa");
-	$ver_conta		=	 mysql_num_rows($query);
-	if(!$ver_conta){
-		echo "NÃO HÁ NENHUMA CONTA EM ABERTO";
-		}else{
-?>
-
 	
-
-
+	<body>
+	
+	
 		<div id='menu' class="fe_menu_index">
 			<ul>
 				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
@@ -21,7 +12,26 @@
 			<ul>
 		</div>
 
+		
 	<div class="area_de_tabelas">
+	
+	
+		
+<?php
+	include "../conexao.php";
+	$query			=	 mysql_query("Select id_conta,data_entrada,mesa.nro_mesa,nome_funcionario from conta  INNER JOIN mesa ON(conta.MESA_id_mesa=mesa.id_mesa)INNER JOIN funcionario ON(conta.FUNCIONARIO_id_funcionario=funcionario.id_funcionario) where status_conta='A' order by mesa.nro_mesa");
+	$ver_conta		=	 mysql_num_rows($query);
+	if(!$ver_conta){
+		echo "<p class='sem_registros'>NÃO HÁ NENHUMA CONTA EM ABERTO</p>";
+		}else{
+?>
+
+	
+
+
+
+
+
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<thead>
 		<tr>
@@ -77,7 +87,44 @@
 ?>								
 	
 	</table>
+	
+	
+	
+	
+	
+		<?php
+		if(isset($_GET['excluido'])){
+			$excluido=$_GET['excluido'];
+			
+			echo "<br />";
+			
+			if($excluido=='true'){
+				?>
+
+					<div class="msg_sucesso">Conta excluida.</div>
+				
+				<?php
+				}else{
+				?>
+
+					<div class="msg_erro">Conta possui registros, exclua primeiro ítens desta conta.</div>
+				
+				<?php
+				}
+				
+			}
+		
+		?>
+	
+	
+	
+	
+	
+	
+	
 	</div>
 	<button class="fundo_1" ><a href="/cadastro/cad_conta.php"><i class='incluir'></i>Incluir Contas</a></button>
 	
+	
+</body>	
 </html>
