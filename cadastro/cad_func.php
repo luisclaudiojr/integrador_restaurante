@@ -75,7 +75,7 @@ if(isset($_GET['id'])){
 		);
 		$condicao = " where id_funcionario=$id";
 		$sucesso = alteracaobd("funcionario",$campos,$condicao);	
-			if($sucesso)
+		if($sucesso)
 			{
 			 header ("Location: ../consulta/funcionarios.php?alterado=true");
 			}else{

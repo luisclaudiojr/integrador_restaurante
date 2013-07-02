@@ -27,17 +27,53 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 			<ul>
 				<li><a href='/menu.php' class="fe_titulo desabilitar_link voltar_para_menu" data-titulo="menu"><i class="menu"></i>Menu Principal</a></li>
 				<li><a class="desabilitar_link fundo_3" data-titulo="contas" href="/consulta/contas.php"><i class="contas"></i>Contas em Aberto</a></li>
-				<li><a class="desabilitar_link fundo_4" data-titulo="pedido" "><i class="itens"></i>Pedidos da Mesa <?php echo $nro_mesa; ?></a></li>
+				<li><a class="desabilitar_link fundo_4" data-titulo="pedido" "><i class="itens"></i>Cadastro de pedido na conta<?php echo $id_conta;?> (mesa: <?php echo $nro_mesa; ?>)</a></li>
 			<ul>
 		</div>
 	
 	
+		
+	
+	<form class="form" name="cadastro_contas" method="POST" action="cad_pedido.php?id_conta=<?php echo $id_conta; ?>">
+	<div class="area_de_tabelas">
+	
+
 	
 	
-	<form name="cadastro_contas" method="POST" action="cad_pedido.php?id_conta=<?php echo $id_conta; ?>">
-		<fieldset>
-			<legend>CADASTRO DE PEDIDO NA CONTA <?php echo $id_conta. "   MESA:  ".$nro_mesa ?> </legend>			
-			<p><label id="labelcentro">item:</label>
+<?php
+	if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
+	if($cont_erro == 0)
+	{
+		//status pedido  P= pendente  E=Encerrado
+		//armazena qual é o campo do bd e qual é a variavel que faz referencia, facilita pra nao ficar escrevendo a query, ele utiliza a funcao inclusaobd que esta na pasta funcoes/funcoesbd
+		$campos=array
+		(
+			'data_pedido' 	   				 => $data_pedido,
+			'CONTA_id_conta'     			 => $id_conta,
+			'status_pedido'   			     => 'P',
+			'qtd' 	   				 		 => $qtd,
+			'ITEM_id_item'     				 => $id_item2,
+			'descricao_pedido'     				 => $descricao			
+		);
+		//passa qual é a tabela pois a função está esperando pela tabela e pelos campos
+		$sucesso = inclusaobd("pedido",$campos);	
+			
+		if($sucesso){
+				?> <div class="msg_sucesso">Registro excluido.</div> <?php
+				//header("Location: ../cadastro/cad_pedido.php?id=$id_conta_final");
+		}else{
+			?> <div class="msg_erro">Erro ao inserir.</div> <?php
+		}
+		
+		echo "<br />";
+	}
+}
+
+?>
+	
+	
+	
+		<label id="labelcentro">item:</label>
 				<?php
 				if ((isset($_POST['Enviar'])) && ($_POST['Enviar'] == 'Enviar')){
 						if($item==""){
@@ -59,9 +95,8 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 						}		
 				?>						 
 				</select>
-			</p>
-			<p>
-				<label>Quantidade</label>
+			<br />
+			<label>Quantidade</label>
 				<?php
 				
 				if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
@@ -72,43 +107,14 @@ if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
 				} ?>
 				
 				<input type="text" id="nome_func" maxlength="3" required value='<?php if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){ echo $qtd ;}?>' name="qtd">
-			</p>
-			<p>
+			<br />
 			<label>Descrição:</label>
 			<textarea name='descricao' ></textarea>
-			</p>
+		</div>
+			<button class="fundo_1"  value="Enviar" name="enviar" type="submit"><i class='incluir'></i>Salvar</button>
+			<a href="/consulta/funcionarios.php" class="fundo_8"><i class='cancelar'></i>Cancelar</a>
+		
+		</form>
 
-			<p>
-				<input type="submit" name="enviar" value="Enviar" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="reset" value="Limpar" class="button">
-			</p>
-				<a href="../index.php">Página Inicial</a>
+
 </html>
-<?php
-if ((isset($_POST['enviar'])) && ($_POST['enviar'] == 'Enviar')){
-	if($cont_erro == 0)
-	{
-		//status pedido  P= pendente  E=Encerrado
-		//armazena qual é o campo do bd e qual é a variavel que faz referencia, facilita pra nao ficar escrevendo a query, ele utiliza a funcao inclusaobd que esta na pasta funcoes/funcoesbd
-		$campos=array
-		(
-			'data_pedido' 	   				 => $data_pedido,
-			'CONTA_id_conta'     			 => $id_conta,
-			'status_pedido'   			     => 'P',
-			'qtd' 	   				 		 => $qtd,
-			'ITEM_id_item'     				 => $id_item2,
-			'descricao_pedido'     				 => $descricao			
-		);
-		//passa qual é a tabela pois a função está esperando pela tabela e pelos campos
-		$sucesso = inclusaobd("pedido",$campos);	
-			
-		if($sucesso){
-				echo "Pedido realizado com sucesso";
-				//header("Location: ../cadastro/cad_pedido.php?id=$id_conta_final");
-		}else{
-			echo "Erro ao Inserir";
-		}
-	}
-}
-
-?>
