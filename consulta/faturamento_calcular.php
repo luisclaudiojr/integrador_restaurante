@@ -27,7 +27,7 @@ while($dados	= mysql_fetch_array($query, MYSQL_ASSOC)){
 	}
 	
 	$data_entrada	=	date("d/m/Y h:i", strtotime($data_entrada));
-	$valor_array[]	=	"<tr><td>$id_conta</td><td>$data_entrada</td><td></td><td>R$ $valor</td></tr>";
+	$valor_array[]	=	"<tr><td>$id_conta</td><td>$data_entrada</td><td>$tipo_pagamento</td><td></td><td>R$ $valor</td></tr>";
 	$valor_total	=	$valor_total+$valor;
 
 }
@@ -58,6 +58,7 @@ $total_array 		=	count($valor_array);
 		<tr>
 			<th style="width: 64px;">Conta</th>
 			<th style="width: 117px;">Data de Entrada</th>
+			<th style="width: 117px;">Tipo de Pagamento</th>
 			<th></th>
 			<th style="width: 80px;">Valor</th>
 		</tr>
