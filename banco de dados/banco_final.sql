@@ -25,6 +25,7 @@ ENGINE = InnoDB;
 CREATE  TABLE IF NOT EXISTS `restaurante`.`MESA` (
   `id_mesa` INT NOT NULL AUTO_INCREMENT ,
   `nro_mesa` INT NOT NULL ,
+  `status` CHAR(1) NULL ,
   PRIMARY KEY (`id_mesa`) ,
   UNIQUE INDEX `nro_mesa_UNIQUE` (`nro_mesa` ASC) )
 ENGINE = InnoDB;

@@ -17,6 +17,10 @@ body {
 .fe_menu_index ul li a.fe_titulo:hover	{ background: rgb(0, 94, 196);}
 .fe_menu_index ul li a i	{ display: block; margin-right:10px; width: 20px; height: 20px; float:left;}
 
+
+
+
+
 i.menu { background: url("/_assets/img/icons/menu.png") center no-repeat; }
 i.funcionarios { background: url("/_assets/img/icons/funcionarios.png") center no-repeat; }
 i.funcionario { background: url("/_assets/img/icons/funcionario.png") center no-repeat; }
@@ -98,3 +102,10 @@ form.form input[type=date]	{ width: 138px;}
 
 .sem_registros {color: gray; text-transform: lowercase; font-style: italic; margin-bottom:0;}
 
+.logouta {background: rgb(39, 38, 38);display: block;padding: 6px;color: white;text-decoration: none;}
+.logouta:hover {background: rgb(46, 71, 43);}
+.logouticon {display: inline-block;width: 22px;height: 20px;margin-right: 10px;margin-top: 4px;margin-top: 0;margin-left: 6px;}
+
+
+
+input.entrar {width: 130px;margin-top: 14px;}

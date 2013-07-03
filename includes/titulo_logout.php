@@ -1,1 +1,2 @@
-<li><a href='logout.php' class="desabilitar_link fundo_7" data-titulo="logout"><i class="logout"></i>Logout</a></li>
+<a href='logout.php' class="fundo_7 logouta">
+<i class="logout logouticon"></i>Logout</a>
